@@ -5,28 +5,28 @@ Project Setup:
   - [x] Create README.md
   - [x] Create .gitignore for Godot
   - [x] Create initial commit
-- [ ] Setup project structure
-  - [ ] Create core/
-    - [ ] autoload/
-      - [ ] game_manager.gd
-      - [ ] sound_manager.gd
-      - [ ] score_manager.gd
-    - [ ] resources/
-      - [ ] game_settings.tres
-  - [ ] Create gameplay/
-    - [ ] ball/
-    - [ ] platform/
-    - [ ] blocks/
-    - [ ] powerups/
-  - [ ] Create ui/
-    - [ ] menus/
-    - [ ] hud/
-  - [ ] Create levels/
-  - [ ] Create assets/
-    - [ ] sprites/
-    - [ ] sounds/
-    - [ ] music/
-    - [ ] fonts/
+- [x] Setup project structure
+  - [x] Create core/
+    - [x] autoload/
+      - [x] game_manager.gd
+      - [x] sound_manager.gd
+      - [x] score_manager.gd
+    - [x] resources/
+      - [x] game_settings.tres ** check how to create a .tres file, because I created a .txt instead
+  - [x] Create gameplay/
+    - [x] ball/
+    - [x] platform/
+    - [x] blocks/
+    - [x] powerups/
+  - [x] Create ui/
+    - [x] menus/
+    - [x] hud/
+  - [x] Create levels/
+  - [x] Create assets/
+    - [x] sprites/
+    - [x] sounds/
+    - [x] music/
+    - [x] fonts/
 
 - [ ] Basic Godot setup
   - [ ] Create project.godot

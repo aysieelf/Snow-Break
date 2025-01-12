@@ -1,12 +1,39 @@
 Project Setup:
-- [ ] Create repository and initial structure
-- [ ] Create .gitignore for Godot
-- [ ] Setup Ruff and Lint Formatter
-  - [ ] Install ruff in venv
-  - [ ] Configure ruff.toml
-  - [ ] Add format on save settings
-- [ ] Project Architecture Setup
-  - [ ] Create scenes folder structure
+Project Setup:
+- [x] Create repository and initial structure
+  - [x] Initialize Git repository
+  - [x] Create README.md
+  - [x] Create .gitignore for Godot
+  - [x] Create initial commit
+- [ ] Setup project structure
+  - [ ] Create core/
+    - [ ] autoload/
+      - [ ] game_manager.gd
+      - [ ] sound_manager.gd
+      - [ ] score_manager.gd
+    - [ ] resources/
+      - [ ] game_settings.tres
+  - [ ] Create gameplay/
+    - [ ] ball/
+    - [ ] platform/
+    - [ ] blocks/
+    - [ ] powerups/
+  - [ ] Create ui/
+    - [ ] menus/
+    - [ ] hud/
+  - [ ] Create levels/
+  - [ ] Create assets/
+    - [ ] sprites/
+    - [ ] sounds/
+    - [ ] music/
+    - [ ] fonts/
+
+- [ ] Basic Godot setup
+  - [ ] Create project.godot
+  - [ ] Configure project settings
+    - [ ] Set window size (800x600)
+    - [ ] Set game name
+    - [ ] Configure input mappings
   - [ ] Setup autoload singletons
   - [ ] Create initial main scene
   - [ ] Setup common game constants

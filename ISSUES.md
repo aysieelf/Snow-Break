@@ -33,7 +33,7 @@ Project Setup:
   - [ ] Configure project settings
     - [x] Set window size (800x600)
     - [x] Set game name
-    - [ ] Configure input mappings
+    - [x] Configure input mappings
   - [ ] Setup autoload singletons
   - [ ] Create initial main scene
   - [ ] Setup common game constants

@@ -32,7 +32,7 @@ Project Setup:
   - [x] Create project.godot
   - [ ] Configure project settings
     - [x] Set window size (800x600)
-    - [ ] Set game name
+    - [x] Set game name
     - [ ] Configure input mappings
   - [ ] Setup autoload singletons
   - [ ] Create initial main scene

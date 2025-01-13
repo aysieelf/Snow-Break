@@ -81,7 +81,8 @@ Godot considers that a project exists in any folder that contains a project.godo
 
 ## Singletons (Autoload)
 
-The Singleton pattern is a useful tool for solving the common use case where you need to store persistent information between scenes. In our case, it's possible to reuse the same scene or class for multiple singletons as long as they have different names.
+The Singleton pattern is a useful tool for solving the common use case where you need to store persistent information between scenes. 
+In our case, it's possible to reuse the same scene or class for multiple singletons as long as they have different names.
 
 Using this concept, you can create objects that:
 - Are always loaded, no matter which scene is currently running.
@@ -96,3 +97,15 @@ Using this concept, you can create objects that:
 
 A built-in type representing a signal of an Object.
 
+---
+
+## Input Mapping
+
+- Input actions are a way to abstract input events into high-level actions.
+
+1. Project Settings -> Input Map
+2. Add a new action
+3. Name the action
+4. Add a new event
+! Snake case for the action name
+! Deadzone: the minimum value for the input to be considered active

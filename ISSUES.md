@@ -29,9 +29,9 @@ Project Setup:
     - [x] fonts/
 
 - [ ] Basic Godot setup
-  - [ ] Create project.godot
+  - [x] Create project.godot
   - [ ] Configure project settings
-    - [ ] Set window size (800x600)
+    - [x] Set window size (800x600)
     - [ ] Set game name
     - [ ] Configure input mappings
   - [ ] Setup autoload singletons

@@ -20,6 +20,11 @@ GameManager="*res://core/autoload/game_manager.gd"
 ScoreManager="*res://core/autoload/score_manager.gd"
 SoundManager="*res://core/autoload/sound_manager.gd"
 
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+
 [file_customization]
 
 folder_colors={

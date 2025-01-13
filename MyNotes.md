@@ -47,23 +47,35 @@ Godot considers that a project exists in any folder that contains a project.godo
 ### addons/
 - Third-party resources
 
-### assets/
-- Contains all the assets used in the game
-
 ### core/
-- Contains all the core scripts
-- game_manager.gd - управлява състоянието на играта (pause, game over, restart)
-- sound_manager.gd - контролира всички звуци и музика
-- score_manager.gd - следи точките, high scores и постижения
+- this is the main logic of the game
+  - game manager: controls the game
+  - common systems: score, power-ups
+  - constants and settings
+  - utilities
 
 ### gameplay/
-- Contains all the scripts related to gameplay
-
-### ui/
-- Contains all the scripts related to the user interface
+- all game objects
+  - ball, paddle, blocks, power-ups
 
 ### levels/
-- Contains all the levels
+- main game scene
+- different configurations of levels
+- level templates
+
+### ui/
+- main menu
+- HUD (heads-up display): score, lives
+- pause menu
+- game over screen
+
+### assets/
+- all resources
+  - sprites
+  - sounds
+  - music
+  - fonts
+  - particle effects
 
 ---
 

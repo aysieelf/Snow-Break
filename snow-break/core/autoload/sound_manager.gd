@@ -27,12 +27,12 @@ func set_master_volume(new_volume: float) -> void:
 	emit_signal("volume_changed", master_volume)
 
 func set_sfx_volume(new_volume: float) -> void:
-	sfx_volume = min($Constants.MAX_MASTER_VOLUME, new_volume)
-	emit_signal("volume_changed", sfx_volume)
+	sfx_volume = min($Constants.MAX_SFX_VOLUME, new_volume)
+	emit_signal("sfx_volume_changed", sfx_volume)
 
 func set_music_volume(new_volume: float) -> void:
-	music_volume = min($Constants.MAX_MASTER_VOLUME, new_volume)
-	emit_signal("volume_changed", music_volume)
+	music_volume = min($Constants.MAX_MUSIC_VOLUME, new_volume)
+	emit_signal("music_volume_changed", music_volume)
 	
 func toggle_mute_sfx() -> void:
 	is_sfx_muted = !is_sfx_muted

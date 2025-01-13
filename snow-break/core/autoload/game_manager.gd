@@ -1,44 +1,27 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-extends Node
-class_name GameManager
-
-# Енумерация за възможните състояния на играта
-enum GameState {
+enum GameStates {
 	MENU,
 	PLAYING,
 	PAUSED,
-	GAME_OVER
+	GAME_OVER,
 }
 
-# Текущо състояние
-var current_state: GameState = GameState.MENU
+var current_state: GameStates = GameStates.MENU
 
-# Методи за управление на състоянието
-func change_state(new_state: GameState) -> void:
+func change_state(new_state: GameStates) -> void:
 	current_state = new_state
-	# Тук ще emit-ваме сигнал за промяната, за да могат други части от играта да реагират
-	
+	# TODO: implement logic for each state here
+
 func toggle_pause() -> void:
-	if current_state == GameState.PLAYING:
-		change_state(GameState.PAUSED)
-	elif current_state == GameState.PAUSED:
-		change_state(GameState.PLAYING)
+	if current_state == GameStates.PLAYING:
+		change_state(GameStates.PAUSED)
+	elif current_state == GameStates.PAUSED:
+		change_state(GameStates.PLAYING)
 
 func restart() -> void:
-	change_state(GameState.PLAYING)
-	# Тук ще добавим ресетване на всички нужни променливи
+	change_state(GameStates.PLAYING)
+	# TODO: reset
 	
 func quit() -> void:
 	get_tree().quit()

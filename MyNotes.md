@@ -109,3 +109,25 @@ A built-in type representing a signal of an Object.
 4. Add a new event
 ! Snake case for the action name
 ! Deadzone: the minimum value for the input to be considered active
+
+--- 
+
+## GameManager
+- Manages the game loop
+- ENUM for Game States
+- Handles game start, pause, resume, and game over
+- Quit the game
+
+---
+
+## ScoreManager
+- Keeps track of the player's score
+- Updates the score display
+- Updates top scores
+- Emits signals if scores change
+
+---
+
+## SoundManager
+- Manages all sound effects and background music
+- Emits signals if volume changes or sounds are muted

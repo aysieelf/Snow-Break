@@ -34,7 +34,7 @@ Project Setup:
     - [x] Set window size (800x600)
     - [x] Set game name
     - [x] Configure input mappings
-  - [ ] Setup autoload singletons
+  - [x] Setup autoload singletons
   - [ ] Create initial main scene
   - [ ] Setup common game constants
 

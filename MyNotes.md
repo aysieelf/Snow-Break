@@ -131,3 +131,35 @@ A built-in type representing a signal of an Object.
 ## SoundManager
 - Manages all sound effects and background music
 - Emits signals if volume changes or sounds are muted
+
+---
+## Initial Main Scene
+- Godot is a tree of scenes
+- Each scene is a tree of nodes
+
+### Nodes
+- Nodes are the building blocks of scenes in Godot
+- Nodes have:
+  - A name
+  - Editable properties
+  - They receive callbacks to update every frame
+  - You can extend them with new properties and functions
+  - You can add them to another node as a child
+
+### Scenes
+- Scenes are saved as .tscn files
+- Scenes are a tree of nodes
+- Scenes can be instanced as nodes in other scenes
+- TYPES:
+  - Main scene: the first scene that is loaded
+  - 2D scene: a scene that contains 2D nodes
+  - 3D scene: a scene that contains 3D nodes
+  - User interface scene: a scene that contains UI nodes (control nodes)
+- Create a new scene: Scene -> New Scene -> Choose type -> Save
+- Running a scene: Run (Cmd + R)
+- Stop running:  Stop (Cmd + .)
+
+### Main Scene
+- "Main" scene is the first scene that is loaded
+- It contains the game manager and the main camera
+- Try to run -> a pop-up dialog will ask you to set the main scene

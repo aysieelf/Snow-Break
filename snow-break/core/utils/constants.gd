@@ -4,16 +4,28 @@ extends Node
 const SAVE_FILE_PATH = "user://highscores.save"
 const SAVE_SOUND_SETTINGS_PATH = "user://sound_settings.save"
 
-# Score system
-const MAX_TOP_SCORES = 5
-const INIT_LIVES = 5
-const LEVEL_UP_POINTS = 5
-const BRICK_NORMAL_POINTS = 1
-const BRICK_POWERUP_POINTS = 3
-
 # Window settings
 const WINDOW_WIDTH = 800
 const WINDOW_HEIGHT = 600
+
+# TODO: research how to import this enum class in game_manager
+# Game states
+enum GameState {
+	MENU,
+	PLAYING,
+	PAUSED,
+	GAME_OVER,
+	LEVEL_COMPLETE
+}
+
+# Score system
+const MAX_TOP_SCORES = 5
+const INIT_LIVES = 5
+const BRICK_NORMAL_POINTS = 1
+const BRICK_POWERUP_POINTS = 3
+const COMBO_MULTIPLIER = 1.5
+const LEVEL_UP_POINTS = 100
+const PERFECT_CLEAR_BONUS = 250
 
 # Sound Manager
 const MAX_MASTER_VOLUME = 1.0
@@ -46,5 +58,12 @@ const BALL_MAX_Y = 584
 # Brick settings
 const BRICK_HEIGHT = 32
 const BRICK_WIDTH = 32
-const BRICK_INIT_COLS = 25
+const BRICK_INIT_COLS = 24
 const BRICK_INIT_ROWS = 3
+const BRICK_MARGIN = 2
+const BRICK_TOP_OFFSET = 50
+const BRICK_TYPES = {
+	"NORMAL": 0,
+	"POWER_UP": 1,
+	"UNBREAKABLE": 2
+}

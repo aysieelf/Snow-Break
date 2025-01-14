@@ -38,3 +38,11 @@ const BALL_MIN_X = 0
 const BALL_MAX_X = 784
 const BALL_MIN_Y = 0
 const BALL_MAX_Y = 584
+
+# Brick settings
+const BRICK_HEIGHT = 32
+const BRICK_WIDTH = 32
+const BRICK_INIT_COLS = 25
+const BRICK_INIT_ROWS = 3
+const BRICK_NORMAL_POINTS = 1
+const BRICK_POWERUP_POINTS = 3

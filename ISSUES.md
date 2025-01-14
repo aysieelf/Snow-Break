@@ -30,13 +30,13 @@ Project Setup:
 
 - [ ] Basic Godot setup
   - [x] Create project.godot
-  - [ ] Configure project settings
+  - [x] Configure project settings
     - [x] Set window size (800x600)
     - [x] Set game name
     - [x] Configure input mappings
   - [x] Setup autoload singletons
-  - [ ] Create initial main scene
-  - [ ] Setup common game constants
+  - [x] Create initial main scene
+  - [x] Setup common game constants
 
 Asset Creation:
 - [ ] Design and create ice platform sprite (120x20px)

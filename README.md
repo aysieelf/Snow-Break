@@ -5,7 +5,7 @@ Snow Break is my interpretation of the classic Breakout game. This is my first g
 ## Current Progress
 [░░░░░░░░░░] 1% (2/57)
 
-- [ ] Project setup (deadline: 15.01.2025)
+- [x] Project setup (deadline: 15.01.2025) - _completed on 14.01.2025_
 - [ ] Asset creation (deadline: 20.01.2025)
 - [ ] Core gameplay (deadline: 27.01.2025)
 - [ ] Game logic (deadline: 3.02.2025)

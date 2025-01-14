@@ -7,9 +7,9 @@ signal sfx_mute_toggled(is_muted: bool)
 
 var is_music_muted: bool = false
 var is_sfx_muted: bool = false
-var master_volume: float = $Constants.MAX_MASTER_VOLUME
-var sfx_volume: float = $Constants.MAX_SFX_VOLUME
-var music_volume: float = $Constants.MAX_MUSIC_VOLUME
+var master_volume: float = Constants.MAX_MASTER_VOLUME
+var sfx_volume: float = Constants.MAX_SFX_VOLUME
+var music_volume: float = Constants.MAX_MUSIC_VOLUME
 
 var _previous_music_volume: float = music_volume
 var _previous_sfx_volume: float = sfx_volume

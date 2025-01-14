@@ -6,6 +6,10 @@ const SAVE_SOUND_SETTINGS_PATH = "user://sound_settings.save"
 
 # Score system
 const MAX_TOP_SCORES = 5
+const INIT_LIVES = 5
+const LEVEL_UP_POINTS = 5
+const BRICK_NORMAL_POINTS = 1
+const BRICK_POWERUP_POINTS = 3
 
 # Window settings
 const WINDOW_WIDTH = 800
@@ -44,5 +48,3 @@ const BRICK_HEIGHT = 32
 const BRICK_WIDTH = 32
 const BRICK_INIT_COLS = 25
 const BRICK_INIT_ROWS = 3
-const BRICK_NORMAL_POINTS = 1
-const BRICK_POWERUP_POINTS = 3

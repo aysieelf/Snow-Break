@@ -28,7 +28,7 @@ Project Setup:
     - [x] music/
     - [x] fonts/
 
-- [ ] Basic Godot setup
+- [x] Basic Godot setup
   - [x] Create project.godot
   - [x] Configure project settings
     - [x] Set window size (800x600)
@@ -39,7 +39,7 @@ Project Setup:
   - [x] Setup common game constants
 
 Asset Creation:
-- [ ] Design and create ice platform sprite (120x20px)
+- [ ] Design and create ice platform sprite (120x20)
   - [ ] Base platform design
   - [ ] Platform glow effect
   - [ ] Platform trail effect
@@ -48,18 +48,17 @@ Asset Creation:
   - [ ] Snowball particle effects
 - [ ] Design different ice blocks (64x32px each)
   - [ ] Regular ice block
-  - [ ] Strong ice block (2 hits)
-  - [ ] Crystal ice block (3 hits)
+  - [ ] Strong ice block (unbreakable)
   - [ ] Power-up containing block
 - [ ] Create power-up sprites (32x32px)
-  - [ ] Platform extender
-  - [ ] Multi-ball
-  - [ ] Speed modifier
+  - [ ] Speed multiplier
   - [ ] Ball strengthener
 - [ ] Design background elements
   - [ ] Main game background
   - [ ] Menu background
   - [ ] Pause screen overlay
+  - [ ] Game over screen overlay
+  - [ ] Next level transition screen
 - [ ] Create UI elements
   - [ ] Menu buttons
   - [ ] Score display
@@ -72,10 +71,11 @@ Asset Creation:
   - [ ] Power-up collection particles
 - [ ] Create sound effects:
   - [ ] Ball bounce sounds
-  - [ ] Block break sounds (different for each type)
+  - [ ] Brick break sounds
   - [ ] Power-up collection sound
   - [ ] Game over sound
-  - [ ] Menu selection sounds
+  - [ ] Menu selection sounds (mouse click)
+  - [ ] Level completion sound
   - [ ] Background music (winter theme)
 
 Core Gameplay (800x600 window):

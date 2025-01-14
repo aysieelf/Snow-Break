@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://8jxtbwxvbn73"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="GameEntities" type="Node2D" parent="."]
+
+[node name="Paddle" type="CharacterBody2D" parent="GameEntities"]
+
+[node name="Sprite2D" type="Sprite2D" parent="GameEntities/Paddle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameEntities/Paddle"]
+
+[node name="Ball" type="RigidBody2D" parent="GameEntities"]
+
+[node name="Sprite2D" type="Sprite2D" parent="GameEntities/Ball"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameEntities/Ball"]
+
+[node name="Brick" type="StaticBody2D" parent="GameEntities"]
+
+[node name="Sprite2D" type="Sprite2D" parent="GameEntities/Brick"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameEntities/Brick"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Lives" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Level" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(1, 0.890196, 1, 1)

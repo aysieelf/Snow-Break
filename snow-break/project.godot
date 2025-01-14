@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Snow Break"
+run/main_scene="res://levels/main_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,11 +20,18 @@ config/icon="res://icon.svg"
 GameManager="*res://core/autoload/game_manager.gd"
 ScoreManager="*res://core/autoload/score_manager.gd"
 SoundManager="*res://core/autoload/sound_manager.gd"
+Constants="*res://core/utils/constants.gd"
 
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=600
+window/size/resizable=false
+window/size/window_width_override=800
+window/size/window_height_override=600
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+window/dpi/allow_hidpi=false
 
 [file_customization]
 

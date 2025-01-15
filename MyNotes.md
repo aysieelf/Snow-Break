@@ -163,3 +163,18 @@ A built-in type representing a signal of an Object.
 - "Main" scene is the first scene that is loaded
 - It contains the game manager and the main camera
 - Try to run -> a pop-up dialog will ask you to set the main scene
+
+---
+## Window
+
+### How to check the window size
+- get_window() - returns the window object
+- get_content_scale_factor() - returns float
+  - for retina displays, the value will be 2.0
+  - if the window was not scaled up, the value will be 1.0
+- get_size() - returns the size of the window
+  - returns Vector2i (x, y as int)
+  - this is the size of the window in pixels
+- set_size() - sets the size of the window
+  - accepts Vector2i (x, y as int) as parameter
+  - sets the size of the window in pixels

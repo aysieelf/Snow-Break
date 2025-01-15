@@ -1,5 +1,4 @@
 Project Setup:
-Project Setup:
 - [x] Create repository and initial structure
   - [x] Initialize Git repository
   - [x] Create README.md
@@ -27,7 +26,6 @@ Project Setup:
     - [x] sounds/
     - [x] music/
     - [x] fonts/
-
 - [x] Basic Godot setup
   - [x] Create project.godot
   - [x] Configure project settings
@@ -40,19 +38,19 @@ Project Setup:
 
 Asset Creation:
 - [ ] Design and create ice platform sprite (120x20)
-  - [ ] Base platform design
+  - [x] Base platform design
   - [ ] Platform glow effect
   - [ ] Platform trail effect
 - [ ] Design and create snowball (20x20px)
-  - [ ] Base snowball
+  - [x] Base snowball
   - [ ] Snowball particle effects
 - [ ] Design different ice blocks (64x32px each)
-  - [ ] Regular ice block
-  - [ ] Strong ice block (unbreakable)
-  - [ ] Power-up containing block
+  - [x] Regular brick
+  - [x] Strong brick (unbreakable)
+  - [x] Power-up containing block
 - [ ] Create power-up sprites (32x32px)
-  - [ ] Speed multiplier
-  - [ ] Ball strengthener
+  - [x] Speed multiplier
+  - [x] Ball strengthener
 - [ ] Design background elements
   - [ ] Main game background
   - [ ] Menu background
@@ -138,7 +136,6 @@ Game Logic:
 - [ ] Create settings system:
   - [ ] Sound settings
   - [ ] Music settings
-  - [ ] Control sensitivity
 
 UI Development:
 - [ ] Create main menu:
@@ -186,6 +183,7 @@ Documentation:
   - [ ] Power-up explanations
   - [ ] Scoring system
   - [ ] Block types description
+  - [ ] Level progression explanation
 - [ ] Document code
 - [ ] Add gameplay screenshots
 - [ ] Create demo video/gif

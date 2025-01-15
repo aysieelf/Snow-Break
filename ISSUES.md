@@ -41,9 +41,9 @@ Asset Creation:
   - [x] Base platform design
   - [x] Platform glow effect
   - [x] Platform trail effect
-- [ ] Design and create snowball (20x20px)
+- [x] Design and create snowball (20x20px)
   - [x] Base snowball
-  - [ ] Snowball particle effects
+  - [x] Snowball particle effects
 - [ ] Design different ice blocks (64x32px each)
   - [x] Regular brick
   - [x] Strong brick (unbreakable)

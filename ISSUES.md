@@ -44,7 +44,7 @@ Asset Creation:
 - [x] Design and create snowball (20x20px)
   - [x] Base snowball
   - [x] Snowball particle effects
-- [ ] Design different ice blocks (64x32px each)
+- [x] Design different ice blocks (64x32px each)
   - [x] Regular brick
   - [x] Strong brick (unbreakable)
   - [x] Power-up containing block

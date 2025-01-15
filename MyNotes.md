@@ -188,3 +188,13 @@ A built-in type representing a signal of an Object.
   - offset
   - texture - used for the light appearance
   - texture_scale
+
+---
+
+## 2D Particles System
+
+- Particle systems are used to simulate complex physical effects, such as sparks, fire, magic particles, smoke, mist, etc.
+- GPUParticles2D: more advanced; lower performance
+- CPUParticles2D: simpler; higher performance
+- You can convert a GPUParticles2D node into a CPUParticles2D node by clicking on the node in the inspector, selecting the 2D viewport, and selecting GPUParticles2D > Convert to CPUParticles2D in the viewport toolbar.
+

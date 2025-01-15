@@ -3,7 +3,7 @@
 Snow Break is my interpretation of the classic Breakout game. This is my first game in Godot and fourth game ever.
 
 ## Current Progress
-[░░░░░░░░░░] 5% (3/56)
+[░░░░░░░░░░] 7% (4/56)
 
 - [x] Project setup (deadline: 15.01.2025) - _completed on 14.01.2025_
 - [ ] Asset creation (deadline: 20.01.2025)
@@ -57,7 +57,7 @@ If you want to explore or modify the code:
 - Click the Play button in the top-right corner
 
 ### Controls
-- Move Ice Platform: `←` `→`
+- Move Ice Platform: `←`/`→` or `A`/`D`
 - Launch Snowball: `Space`
 - Pause/Resume: `Space`
 - Return to Menu: `Esc`
@@ -95,6 +95,8 @@ If you want to explore or modify the code:
 - First time using GDScript
 - First time using Singletons
 - First time using input mapping
+- First time using PointLight2D
+- First time using GPUParticles2D
 
 ## 📸 Screenshots
 _(Coming soon)_

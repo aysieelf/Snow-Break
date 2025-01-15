@@ -177,3 +177,14 @@ A built-in type representing a signal of an Object.
 - set_size() - sets the size of the window
   - accepts Vector2i (x, y as int) as parameter
   - sets the size of the window in pixels
+
+---
+
+## PointLight2D
+
+- A light source that emits light in all directions from a single point in 2D space.
+- It can cast shadows and change the color of objects it illuminates.
+  - height - in pixels, if the height is 100, then it will illuminate an object 100 pixels away at a 45° angle to the plane
+  - offset
+  - texture - used for the light appearance
+  - texture_scale

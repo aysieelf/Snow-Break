@@ -1,15 +1,17 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	var window = get_window()
 	var scale_factor = window.get_content_scale_factor()
+	print("Scale factor:", scale_factor)
+	
+	var dpi = DisplayServer.screen_get_dpi()
+	print("Screen DPI:", dpi)
+	
 	var pixel_size = window.get_size()
-	if scale_factor == 2.0:
+	print("Current window size:", pixel_size)
+	
+	# На Mac Retina дисплеите обикновено са с DPI > 180
+	if dpi > 180:
 		window.set_size(Vector2i(pixel_size.x * 2, pixel_size.y * 2))
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+		print("New window size:", window.get_size())

@@ -169,9 +169,8 @@ A built-in type representing a signal of an Object.
 
 ### How to check the window size
 - get_window() - returns the window object
-- get_content_scale_factor() - returns float
-  - for retina displays, the value will be 2.0
-  - if the window was not scaled up, the value will be 1.0
+- DisplayServer.screen_get_dpi() - returns the DPI of the screen
+  - On macOS DPI is usually DPI > 180
 - get_size() - returns the size of the window
   - returns Vector2i (x, y as int)
   - this is the size of the window in pixels

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8qt3wnucs6of"]
+[gd_scene load_steps=20 format=3 uid="uid://c8qt3wnucs6of"]
 
 [ext_resource type="Script" path="res://core/managers/window_scaler.gd" id="1_eghef"]
 [ext_resource type="Texture2D" uid="uid://b85f6aigf2wvr" path="res://assets/sprites/paddle/paddle-base.png" id="1_qgrv8"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://defqbxwpyle3b" path="res://assets/sprites/paddle/paddle-default-face.png" id="2_fdwar"]
 [ext_resource type="Texture2D" uid="uid://ddtlfic4b8wi4" path="res://assets/sprites/paddle/paddle-levelup-face.png" id="3_wnomx"]
 [ext_resource type="Texture2D" uid="uid://cewqwextwlbpp" path="res://assets/sprites/paddle/paddle-powerup-face.png" id="4_6yp6x"]
+[ext_resource type="Script" path="res://levels/scenes/snowball.gd" id="7_5x2vv"]
+[ext_resource type="Texture2D" uid="uid://cyonv5hn0kcac" path="res://assets/sprites/snowball/snowball.png" id="7_e2v3t"]
+[ext_resource type="Texture2D" uid="uid://b6ucg56xfxvsw" path="res://assets/sprites/snowball/snowflake1.png" id="7_htg4i"]
+[ext_resource type="Texture2D" uid="uid://bwsy835m8tj0t" path="res://assets/sprites/snowball/snowflake2.png" id="8_1al12"]
 
 [sub_resource type="Gradient" id="Gradient_5dcm1"]
 colors = PackedColorArray(0.827451, 0.952941, 0.988235, 0.337255, 1, 1, 1, 0)
@@ -40,10 +44,27 @@ height = 20
 fill = 1
 fill_from = Vector2(5, 0)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dqbdk"]
+lifetime_randomness = 0.51
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 20.87
+spread = 28.374
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mokfu"]
+lifetime_randomness = 0.61
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 5.41
+spread = 28.374
+gravity = Vector3(0, 98, 0)
+
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_eghef")
 
 [node name="Paddle" type="Node2D" parent="."]
+visible = false
 script = ExtResource("2_06m1c")
 
 [node name="Trail" type="GPUParticles2D" parent="Paddle"]
@@ -53,7 +74,7 @@ process_material = SubResource("ParticleProcessMaterial_5uhxo")
 texture = SubResource("GradientTexture2D_sndxa")
 fixed_fps = 60
 
-[node name="Base" type="Sprite2D" parent="Paddle"]
+[node name="PaddleBase" type="Sprite2D" parent="Paddle"]
 position = Vector2(400, 300)
 texture = ExtResource("1_qgrv8")
 
@@ -63,10 +84,12 @@ texture = ExtResource("2_fdwar")
 
 [node name="LevelupFace" type="Sprite2D" parent="Paddle"]
 visible = false
+position = Vector2(400, 300)
 texture = ExtResource("3_wnomx")
 
 [node name="PowerupFace" type="Sprite2D" parent="Paddle"]
 visible = false
+position = Vector2(400, 300)
 texture = ExtResource("4_6yp6x")
 
 [node name="SpeedUpGlow" type="PointLight2D" parent="Paddle"]
@@ -88,3 +111,30 @@ energy = 2.94
 blend_mode = 2
 texture = SubResource("GradientTexture2D_ytplq")
 height = 128.0
+
+[node name="Snowball" type="Node2D" parent="."]
+script = ExtResource("7_5x2vv")
+
+[node name="SnowParticle1" type="GPUParticles2D" parent="Snowball"]
+position = Vector2(393, 313)
+scale = Vector2(0.2, 0.2)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_dqbdk")
+texture = ExtResource("7_htg4i")
+lifetime = 0.25
+randomness = 0.87
+trail_lifetime = 0.75
+
+[node name="SnowParticle2" type="GPUParticles2D" parent="Snowball"]
+position = Vector2(393, 313)
+scale = Vector2(0.2, 0.2)
+amount = 2
+process_material = SubResource("ParticleProcessMaterial_mokfu")
+texture = ExtResource("8_1al12")
+lifetime = 0.25
+randomness = 0.87
+trail_lifetime = 0.75
+
+[node name="SnowballBase" type="Sprite2D" parent="Snowball"]
+position = Vector2(393, 313)
+texture = ExtResource("7_e2v3t")

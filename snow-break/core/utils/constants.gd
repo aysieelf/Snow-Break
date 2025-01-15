@@ -32,20 +32,20 @@ const MAX_MASTER_VOLUME = 1.0
 const MAX_SFX_VOLUME = 1.0
 const MAX_MUSIC_VOLUME = 1.0
 
-# Player settings
+# Paddle settings
 const PADDLE_SPEED = 5 # TODO: this is a placeholder for now
-const PADDLE_HEIGHT = 32
-const PADDLE_WIDTH = 128
+const PADDLE_HEIGHT = 20
+const PADDLE_WIDTH = 120
 const PADDLE_POS = Vector2(336, 568) 
 const PADDLE_MIN_X = 0
 const PADDLE_MAX_X = 672
 
-# Ball settings
+# Snowball settings
 const BALL_INIT_SPEED = 5 # TODO: this is a placeholder for now
 const BALL_MAX_SPEED = 10
 const BALL_ACCELERATION = 0.1
-const BALL_HEIGHT = 16
-const BALL_WIDTH = 16
+const BALL_HEIGHT = 20
+const BALL_WIDTH = 20
 const BALL_POS = Vector2(392, 552)
 const BALL_INIT_VECTOR = Vector2(0, -1) # up
 const MIN_BOUNCE_ANGLE = deg_to_rad(-60)
@@ -57,7 +57,7 @@ const BALL_MAX_Y = 584
 
 # Brick settings
 const BRICK_HEIGHT = 32
-const BRICK_WIDTH = 32
+const BRICK_WIDTH = 64
 const BRICK_INIT_COLS = 24
 const BRICK_INIT_ROWS = 3
 const BRICK_MARGIN = 2

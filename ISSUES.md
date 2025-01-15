@@ -37,10 +37,10 @@ Project Setup:
   - [x] Setup common game constants
 
 Asset Creation:
-- [ ] Design and create ice platform sprite (120x20)
+- [x] Design and create ice platform sprite (120x20)
   - [x] Base platform design
-  - [ ] Platform glow effect
-  - [ ] Platform trail effect
+  - [x] Platform glow effect
+  - [x] Platform trail effect
 - [ ] Design and create snowball (20x20px)
   - [x] Base snowball
   - [ ] Snowball particle effects

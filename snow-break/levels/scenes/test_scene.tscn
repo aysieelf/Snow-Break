@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8qt3wnucs6of"]
+[gd_scene load_steps=8 format=3 uid="uid://c8qt3wnucs6of"]
 
 [ext_resource type="Script" path="res://core/managers/window_scaler.gd" id="1_eghef"]
 [ext_resource type="Texture2D" uid="uid://b85f6aigf2wvr" path="res://assets/sprites/paddle/paddle-base.png" id="1_qgrv8"]
@@ -6,17 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://ddtlfic4b8wi4" path="res://assets/sprites/paddle/paddle-levelup-face.png" id="3_wnomx"]
 [ext_resource type="Texture2D" uid="uid://cewqwextwlbpp" path="res://assets/sprites/paddle/paddle-powerup-face.png" id="4_6yp6x"]
 
+[sub_resource type="Gradient" id="Gradient_oueyy"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ytplq"]
+gradient = SubResource("Gradient_oueyy")
+width = 120
+height = 20
+fill = 1
+fill_from = Vector2(5, 0)
+
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_eghef")
 
 [node name="Paddle" type="Node2D" parent="."]
 
 [node name="Base" type="Sprite2D" parent="Paddle"]
-position = Vector2(200, 150)
+position = Vector2(400, 300)
 texture = ExtResource("1_qgrv8")
 
 [node name="DefaultFace" type="Sprite2D" parent="Paddle"]
-position = Vector2(200, 150)
+position = Vector2(400, 300)
 texture = ExtResource("2_fdwar")
 
 [node name="LevelupFace" type="Sprite2D" parent="Paddle"]
@@ -26,3 +35,22 @@ texture = ExtResource("3_wnomx")
 [node name="PowerupFace" type="Sprite2D" parent="Paddle"]
 visible = false
 texture = ExtResource("4_6yp6x")
+
+[node name="SpeedUpGlow" type="PointLight2D" parent="Paddle"]
+visible = false
+position = Vector2(400.5, 300)
+scale = Vector2(1.04167, 1.2)
+color = Color(0.282353, 0.388235, 0.333333, 1)
+energy = 2.84
+blend_mode = 2
+texture = SubResource("GradientTexture2D_ytplq")
+height = 128.0
+
+[node name="StrengthUpGlow" type="PointLight2D" parent="Paddle"]
+position = Vector2(400.5, 300)
+scale = Vector2(1.04167, 1.2)
+color = Color(0.364706, 0.309804, 0.431373, 1)
+energy = 2.94
+blend_mode = 2
+texture = SubResource("GradientTexture2D_ytplq")
+height = 128.0

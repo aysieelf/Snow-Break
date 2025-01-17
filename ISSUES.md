@@ -48,7 +48,7 @@ Asset Creation:
   - [x] Regular brick
   - [x] Strong brick (unbreakable)
   - [x] Power-up containing block
-- [ ] Create power-up sprites (32x32px)
+- [x] Create power-up sprites (32x32px)
   - [x] Speed multiplier
   - [x] Ball strengthener
 - [ ] Design background elements

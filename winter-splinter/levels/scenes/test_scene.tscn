@@ -259,7 +259,7 @@ position = Vector2(400, 80)
 [node name="Brick" type="Area2D" parent="Bricks"]
 script = ExtResource("21_s6t6s")
 
-[node name="NormalBrick" type="Sprite2D" parent="Bricks/Brick"]
+[node name="NormalBrick1" type="Sprite2D" parent="Bricks/Brick"]
 texture = ExtResource("20_v2itj")
 
 [node name="BreakBrick" type="CPUParticles2D" parent="Bricks/Brick"]

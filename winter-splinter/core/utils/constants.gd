@@ -15,7 +15,7 @@ enum GameState {
 	PLAYING,
 	PAUSED,
 	GAME_OVER,
-	LEVEL_COMPLETE
+	LEVEL_UP,
 }
 
 # Score system

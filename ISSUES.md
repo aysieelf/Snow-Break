@@ -61,10 +61,10 @@ Asset Creation:
   - [x] Menu buttons
   - [x] Life counter icons
 - [x] Create game icon
-- [ ] Design and create particle effects
+- [x] Design and create particle effects
   - [x] Snow particles
   - [x] Block break particles
-  - [ ] Power-up collection particles
+  - [x] Power-up collection particles
 - [ ] Create sound effects:
   - [ ] Ball bounce sounds
   - [ ] Brick break sounds

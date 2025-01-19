@@ -1,27 +1,34 @@
 extends Node
 
-enum GameStates {
-	MENU,
-	PLAYING,
-	PAUSED,
-	GAME_OVER,
-}
 
-var current_state: GameStates = GameStates.MENU
+var current_state: Constants.GameState = Constants.GameState.MENU
 
-func change_state(new_state: GameStates) -> void:
-	current_state = new_state
-	# TODO: implement logic for each state here
+func start_game() -> void:
+	current_state = Constants.GameState.PLAYING
 
 func toggle_pause() -> void:
-	if current_state == GameStates.PLAYING:
-		change_state(GameStates.PAUSED)
-	elif current_state == GameStates.PAUSED:
-		change_state(GameStates.PLAYING)
+	if current_state == Constants.GameState.PLAYING:
+		current_state = Constants.GameState.PAUSED
+	elif current_state == Constants.GameState.PAUSED:
+		current_state = Constants.GameState.PLAYING
 
-func restart() -> void:
-	change_state(GameStates.PLAYING)
-	# TODO: reset
+func level_up_screen() -> void:
+	ScoreManager.level_up()
+	current_state = Constants.GameState.LEVEL_UP
 	
+func game_over_screen() -> void:
+	current_state = Constants.GameState.GAME_OVER
+
+func restart_current_level() -> void:
+	# TODO: partly reset
+	start_game()
+
+func complete_restart() -> void:
+	# TODO: reset everything
+	start_game()
+	
+func quit_to_menu() -> void:
+	current_state = Constants.GameState.MENU
+
 func quit() -> void:
 	get_tree().quit()

@@ -1,4 +1,4 @@
-# ❄️ Snow Break
+# ❄️ Winter Splinter
 
 Snow Break is my interpretation of the classic Breakout game. This is my first game in Godot and fourth game ever.
 

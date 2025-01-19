@@ -31,9 +31,9 @@ Snow Break is my interpretation of the classic Breakout game. This is my first g
 - [Technical Details](#-technical-details)
 
 ## 🎮 Quick Start (Just Play)
-- **macOS**: Download `SnowBreak.zip` from [Releases](https://github.com/aysieelf/Snow-Break/releases/tag/macos-1.0.0)
-- **Windows**: Download `SnowBreak.zip` from [Releases]() (_coming soon_)
-- **Linux**: Download `SnowBreak.zip` from [Releases]() (_coming soon_)
+- **macOS**: Download `WinterSplinter.zip` from [Releases]() (_coming soon_)
+- **Windows**: Download `WinterSplinter.zip` from [Releases]() (_coming soon_)
+- **Linux**: Download `WinterSplinter.zip` from [Releases]() (_coming soon_)
 - **Web**: Play directly in your browser [here]() (_coming soon_)
 
 ## 🚀 Development Setup

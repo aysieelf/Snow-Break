@@ -62,8 +62,8 @@ Asset Creation:
   - [x] Life counter icons
 - [x] Create game icon
 - [ ] Design and create particle effects
-  - [ ] Snow particles
-  - [ ] Block break particles
+  - [x] Snow particles
+  - [x] Block break particles
   - [ ] Power-up collection particles
 - [ ] Create sound effects:
   - [ ] Ball bounce sounds

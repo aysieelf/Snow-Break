@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c8qt3wnucs6of"]
+[gd_scene load_steps=26 format=3 uid="uid://c8qt3wnucs6of"]
 
 [ext_resource type="Script" path="res://core/managers/window_scaler.gd" id="1_eghef"]
 [ext_resource type="Texture2D" uid="uid://b85f6aigf2wvr" path="res://assets/sprites/paddle/paddle-base.png" id="1_qgrv8"]
@@ -10,6 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://cyonv5hn0kcac" path="res://assets/sprites/snowball/snowball.png" id="7_e2v3t"]
 [ext_resource type="Texture2D" uid="uid://b6ucg56xfxvsw" path="res://assets/sprites/snowball/snowflake1.png" id="7_htg4i"]
 [ext_resource type="Texture2D" uid="uid://bwsy835m8tj0t" path="res://assets/sprites/snowball/snowflake2.png" id="8_1al12"]
+[ext_resource type="Texture2D" uid="uid://duslltbo071mi" path="res://assets/sprites/backgrounds/start-menu-background.png" id="11_eqrah"]
+[ext_resource type="Texture2D" uid="uid://c6hhr2acul1ss" path="res://assets/sprites/backgrounds/long-title.png" id="12_621q1"]
+[ext_resource type="Texture2D" uid="uid://dp0gg5amesbci" path="res://assets/sprites/buttons/button-normal.png" id="13_x3w5k"]
+[ext_resource type="Texture2D" uid="uid://b3rvgnu6m4xnd" path="res://assets/sprites/buttons/button-pressed.png" id="14_54vw6"]
+[ext_resource type="Texture2D" uid="uid://6n6fow53ntdx" path="res://assets/sprites/buttons/button-hover.png" id="15_wqj47"]
+[ext_resource type="Texture2D" uid="uid://bl6pyaeguems5" path="res://assets/sprites/backgrounds/playing-background.png" id="16_bmdty"]
 
 [sub_resource type="Gradient" id="Gradient_5dcm1"]
 colors = PackedColorArray(0.827451, 0.952941, 0.988235, 0.337255, 1, 1, 1, 0)
@@ -113,6 +119,7 @@ texture = SubResource("GradientTexture2D_ytplq")
 height = 128.0
 
 [node name="Snowball" type="Node2D" parent="."]
+visible = false
 script = ExtResource("7_5x2vv")
 
 [node name="SnowParticle1" type="GPUParticles2D" parent="Snowball"]
@@ -138,3 +145,47 @@ trail_lifetime = 0.75
 [node name="SnowballBase" type="Sprite2D" parent="Snowball"]
 position = Vector2(393, 313)
 texture = ExtResource("7_e2v3t")
+
+[node name="StartMenu" type="Node2D" parent="."]
+
+[node name="Background" type="TextureRect" parent="StartMenu"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_eqrah")
+
+[node name="Title" type="Sprite2D" parent="StartMenu"]
+modulate = Color(0.999999, 0.789147, 0.865265, 1)
+light_mask = 3
+position = Vector2(400, 100)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("12_621q1")
+
+[node name="StartButton" type="TextureButton" parent="StartMenu"]
+offset_left = 280.0
+offset_top = 186.0
+offset_right = 520.0
+offset_bottom = 246.0
+texture_normal = ExtResource("13_x3w5k")
+texture_pressed = ExtResource("14_54vw6")
+texture_hover = ExtResource("15_wqj47")
+
+[node name="Label" type="Label" parent="StartMenu/StartButton"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 237.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.142937, 0.301601, 0.534869, 1)
+theme_override_font_sizes/font_size = 18
+text = "START"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Node2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("16_bmdty")

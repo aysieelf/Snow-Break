@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c8qt3wnucs6of"]
+[gd_scene load_steps=36 format=3 uid="uid://c8qt3wnucs6of"]
 
 [ext_resource type="Script" path="res://core/managers/window_scaler.gd" id="1_eghef"]
 [ext_resource type="Texture2D" uid="uid://b85f6aigf2wvr" path="res://assets/sprites/paddle/paddle-base.png" id="1_qgrv8"]
@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://b3rvgnu6m4xnd" path="res://assets/sprites/buttons/button-pressed.png" id="14_54vw6"]
 [ext_resource type="Texture2D" uid="uid://6n6fow53ntdx" path="res://assets/sprites/buttons/button-hover.png" id="15_wqj47"]
 [ext_resource type="Texture2D" uid="uid://bl6pyaeguems5" path="res://assets/sprites/backgrounds/playing-background.png" id="16_bmdty"]
+[ext_resource type="Texture2D" uid="uid://da2oesv0gmpma" path="res://assets/sprites/snowball/snowflake-3.png" id="18_kgh77"]
+[ext_resource type="Texture2D" uid="uid://cm66phqwr0o3e" path="res://assets/sprites/snowball/snowflake-4.png" id="19_mfcgo"]
+[ext_resource type="Texture2D" uid="uid://cl0svofy222qd" path="res://assets/sprites/bricks/normal-brick.png" id="20_v2itj"]
+[ext_resource type="Script" path="res://levels/scenes/normal_brick.gd" id="21_s6t6s"]
 
 [sub_resource type="Gradient" id="Gradient_5dcm1"]
 colors = PackedColorArray(0.827451, 0.952941, 0.988235, 0.337255, 1, 1, 1, 0)
@@ -67,6 +71,32 @@ emission_sphere_radius = 5.41
 spread = 28.374
 gravity = Vector3(0, 98, 0)
 
+[sub_resource type="Gradient" id="Gradient_mudx1"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5hrfe"]
+gradient = SubResource("Gradient_mudx1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_66m37"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(400, 1, 1)
+gravity = Vector3(0, 20, 0)
+radial_accel_min = -1.0
+radial_accel_max = -1.0
+damping_min = 5.0
+damping_max = 5.0
+scale_min = 0.25
+scale_max = 1.5
+color_ramp = SubResource("GradientTexture1D_5hrfe")
+
+[sub_resource type="Curve" id="Curve_5w2dg"]
+_data = [Vector2(0.0483516, 0.995162), 0.0, 0.0, 0, 0, Vector2(1, 0.165426), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3va1l"]
+size = Vector2(64, 32)
+
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_eghef")
 
@@ -87,6 +117,7 @@ scale = Vector2(0.75, 0.75)
 script = ExtResource("2_06m1c")
 
 [node name="Trail" type="GPUParticles2D" parent="Paddle"]
+position = Vector2(0, 10)
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_5uhxo")
 texture = SubResource("GradientTexture2D_sndxa")
@@ -152,6 +183,7 @@ position = Vector2(393, 313)
 texture = ExtResource("7_e2v3t")
 
 [node name="StartMenu" type="Node2D" parent="."]
+visible = false
 
 [node name="Background" type="TextureRect" parent="StartMenu"]
 offset_right = 40.0
@@ -185,3 +217,65 @@ text = "START"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="Snow" type="Node2D" parent="."]
+position = Vector2(400, -5)
+
+[node name="snowflakes1" type="GPUParticles2D" parent="Snow"]
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_66m37")
+texture = ExtResource("7_htg4i")
+lifetime = 10.0
+randomness = 0.9
+collision_base_size = 0.0
+
+[node name="snowflakes2" type="GPUParticles2D" parent="Snow"]
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_66m37")
+texture = ExtResource("8_1al12")
+lifetime = 13.0
+randomness = 0.6
+collision_base_size = 0.0
+
+[node name="snowflakes3" type="GPUParticles2D" parent="Snow"]
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_66m37")
+texture = ExtResource("18_kgh77")
+lifetime = 15.0
+randomness = 0.7
+collision_base_size = 0.0
+
+[node name="snowflakes4" type="GPUParticles2D" parent="Snow"]
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_66m37")
+texture = ExtResource("19_mfcgo")
+lifetime = 19.0
+randomness = 0.52
+collision_base_size = 0.0
+
+[node name="Bricks" type="Node2D" parent="."]
+position = Vector2(400, 80)
+
+[node name="Brick" type="Area2D" parent="Bricks"]
+script = ExtResource("21_s6t6s")
+
+[node name="NormalBrick" type="Sprite2D" parent="Bricks/Brick"]
+texture = ExtResource("20_v2itj")
+
+[node name="BreakBrick" type="CPUParticles2D" parent="Bricks/Brick"]
+emitting = false
+amount = 10
+lifetime = 0.35
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 150)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_5w2dg")
+color = Color(0.960784, 0.843137, 0.952941, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Brick"]
+shape = SubResource("RectangleShape2D_3va1l")

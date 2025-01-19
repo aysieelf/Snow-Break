@@ -60,7 +60,7 @@ Asset Creation:
 - [x] Create UI elements
   - [x] Menu buttons
   - [x] Life counter icons
-- [ ] Create game icon
+- [x] Create game icon
 - [ ] Design and create particle effects
   - [ ] Snow particles
   - [ ] Block break particles

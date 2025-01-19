@@ -51,17 +51,15 @@ Asset Creation:
 - [x] Create power-up sprites (32x32px)
   - [x] Speed multiplier
   - [x] Ball strengthener
-- [ ] Design background elements
-  - [ ] Main game background
-  - [ ] Menu background
-  - [ ] Pause screen overlay
-  - [ ] Game over screen overlay
-  - [ ] Next level transition screen
-- [ ] Create UI elements
-  - [ ] Menu buttons
-  - [ ] Score display
-  - [ ] Life counter icons
-  - [ ] Level indicator
+- [x] Design background elements
+  - [x] Main game background
+  - [x] Start menu background
+  - [x] Pause screen overlay
+  - [x] Game over screen overlay
+  - [x] Next level transition screen
+- [x] Create UI elements
+  - [x] Menu buttons
+  - [x] Life counter icons
 - [ ] Create game icon
 - [ ] Design and create particle effects
   - [ ] Snow particles

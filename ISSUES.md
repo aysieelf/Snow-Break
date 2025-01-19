@@ -65,14 +65,14 @@ Asset Creation:
   - [x] Snow particles
   - [x] Block break particles
   - [x] Power-up collection particles
-- [ ] Create sound effects:
-  - [ ] Ball bounce sounds
-  - [ ] Brick break sounds
-  - [ ] Power-up collection sound
-  - [ ] Game over sound
-  - [ ] Menu selection sounds (mouse click)
-  - [ ] Level completion sound
-  - [ ] Background music (winter theme)
+- [x] Create sound effects:
+  - [x] Ball bounce sounds
+  - [x] Brick break sounds
+  - [x] Power-up collection sound
+  - [x] Game over sound
+  - [x] Menu selection sounds (mouse click)
+  - [x] Level completion sound
+  - [x] Background music (winter theme)
 
 Core Gameplay (800x600 window):
 - [ ] Setup base scene structure

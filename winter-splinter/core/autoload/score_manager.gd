@@ -6,6 +6,8 @@ signal score_changed(new_score)
 signal high_score_changed(high_scores)
 
 var current_score: int = 0
+var current_level: int = 1
+var current_healthbar: int = 3
 var top_scores: Array[int] = []
 
 func add_points(points: int) -> void:
@@ -32,6 +34,8 @@ func update_high_scores(new_score: int) -> void:
 			emit_signal("high_score_changed", top_scores)
 			break
 	
+func level_up():
+	current_level += 1
 
 func save_high_scores():
 	pass

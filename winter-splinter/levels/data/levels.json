@@ -1,0 +1,179 @@
+{
+  "level_1": {
+    "rows": ["XXXXXXXXXXX"],
+    "block_types": {
+      "X": "normal",
+      "S": "strong",
+      "P": "powerup",
+      "0": "empty"
+    }
+  },
+  "level_2": {
+    "rows": [
+      "X0X0X0X0X0X",
+      "XXXXXXXXXXX"
+    ]
+  },
+  "level_3": {
+    "rows": [
+      "XXXXXXXXXXX",
+      "00P0P0P0P00",
+      "XXXXXXXXXXX"
+    ]
+  },
+  "level_4": {
+    "rows": [
+      "XPXPXPXPXPX",
+      "XXXXXXXXXXX",
+      "X0X0X0X0X0X"
+    ]
+  },
+  "level_5": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "XXXXXXXXXXX",
+      "P0P0P0P0P0P"
+    ]
+  },
+  "level_6": {
+    "rows": [
+      "XSXSXSXSXSX",
+      "P0P0P0P0P0P",
+      "XSXSXSXSXSX"
+    ]
+  },
+  "level_7": {
+    "rows": [
+      "XXXXXPXXXXX",
+      "XXXXPPPXXXX",
+      "XXXPPPPPXXX",
+      "XXPPPPPPPXX"
+    ]
+  },
+  "level_8": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "XXXXXXXXXXX",
+      "PPPPPPPPPPP",
+      "XXXXXXXXXXX"
+    ]
+  },
+  "level_9": {
+    "rows": [
+      "S0S0S0S0S0S",
+      "0X0X0X0X0X0",
+      "P0P0P0P0P0P",
+      "0X0X0X0X0X0",
+      "S0S0S0S0S0S"
+    ]
+  },
+  "level_10": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "SPSPSPSPSPX",
+      "SSSSSSSSSSS",
+      "XPSPSPSPSPX",
+      "SSSSSSSSSSS"
+    ]
+  },
+  "level_11": {
+    "rows": [
+      "SXPXSXPXSXP",
+      "XSXPXSXPXSX",
+      "PXSXPXSXPXS",
+      "XPXSXPXSXPX",
+      "SXPXSXPXSXP"
+    ]
+  },
+  "level_12": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "SPPPPPPPPPS",
+      "SPSSSSSSSPS",
+      "SPPPPPPPPPS",
+      "SSSSSSSSSSS"
+    ]
+  },
+  "level_13": {
+    "rows": [
+      "PSSSSSSSSSP",
+      "SPPPPPPPPPS",
+      "SPSSSSSSPPS",
+      "SPPPPPPPPPX",
+      "PSSSSSSSSSP"
+    ]
+  },
+  "level_14": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "S0S0P0P0S0S",
+      "S0S0S0S0S0S",
+      "S0P0P0P0P0S",
+      "SSSSSSSSSSS"
+    ]
+  },
+  "level_15": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "SPSPSPSPSPX",
+      "SSSSSSSSSSS",
+      "XPSPSPSPSPX",
+      "SSSSSSSSSSS",
+      "SPSPSPSPSPX"
+    ]
+  },
+  "level_16": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "SSSSSSSSSSS",
+      "SPPPPPPPPPX",
+      "SPSSSSSSPSX",
+      "SPPPPPPPPPX",
+      "SSSSSSSSSSS"
+    ]
+  },
+  "level_17": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "SPSPSPSPSPX",
+      "SPSSSSSSPSX",
+      "SPSSSSSSPSX",
+      "SPSPSPSPSPX",
+      "SSSSSSSSSSS"
+    ]
+  },
+  "level_18": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "SSSSSSSSSSS",
+      "SPPPPPPPPPX",
+      "SPSSSSSSPSX",
+      "SPSSSSSSPSX",
+      "SPPPPPPPPPX",
+      "SSSSSSSSSSS"
+    ]
+  },
+  "level_19": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "SSSSSSSSSSS",
+      "SSSSSSSSSSS",
+      "SPPPPPPPPPX",
+      "SPSSSSSSPSX",
+      "SPPPPPPPPPX",
+      "SSSSSSSSSSS"
+    ]
+  },
+  "level_20": {
+    "rows": [
+      "SSSSSSSSSSS",
+      "SSSSSSSSSSS",
+      "SSSSSSSSSSS",
+      "SPSSSSSSPSX",
+      "SPSSSSSSPSX",
+      "SPSSSSSSPSX",
+      "SSSSSSSSSSS",
+      "SSSSSSSSSSS"
+    ]
+  }
+}

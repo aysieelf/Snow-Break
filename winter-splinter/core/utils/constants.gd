@@ -67,3 +67,8 @@ const BRICK_TYPES = {
 	"POWER_UP": 1,
 	"UNBREAKABLE": 2
 }
+
+# Scores
+const INITIAL_LEVEL = 1
+const INITIAL_HEALTHBAR = 3
+const INITIAL_SCORE = 0

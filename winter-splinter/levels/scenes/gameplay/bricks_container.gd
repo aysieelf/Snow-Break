@@ -9,8 +9,7 @@ func _ready():
 	
 func load_level(level_number: int):
 	# Load JSON file
-	var json_path = "res://levels/data/level_" + str(level_number) + ".json"
-	print(json_path)
+	var json_path = "res://levels/data/levels.json"
 	var file = FileAccess.open(json_path, FileAccess.READ)
 	var json_text = file.get_as_text()
 	var json_data = JSON.parse_string(json_text)
@@ -19,7 +18,7 @@ func load_level(level_number: int):
 	
 	for row in level_data.rows:
 		for cell in row:
-			if cell == "N":
+			if cell == "X":
 				var normal_brick = normal.instantiate()
 				add_child(normal_brick)
 			elif cell == "P":
@@ -28,3 +27,6 @@ func load_level(level_number: int):
 			elif cell == "S":
 				var strong_brick = strong.instantiate()
 				add_child(strong_brick)
+			elif cell == "0":
+				var empty = Control.new()
+				add_child(empty)

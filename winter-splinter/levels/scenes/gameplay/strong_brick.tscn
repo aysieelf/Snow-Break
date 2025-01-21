@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1c5u72m6lcn5"]
+
+[ext_resource type="Script" path="res://levels/scenes/gameplay/brick-break.gd" id="1_bpic2"]
+[ext_resource type="Texture2D" uid="uid://8awy2hh4mpfn" path="res://assets/sprites/bricks/strong-brick.png" id="2_8jo1y"]
+
+[sub_resource type="Curve" id="Curve_eb7ot"]
+_data = [Vector2(0.0483516, 0.995162), 0.0, 0.0, 0, 0, Vector2(1, 0.165426), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbmfq"]
+size = Vector2(64, 32)
+
+[node name="ControlBrick" type="Control"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Brick" type="Area2D" parent="."]
+position = Vector2(32, 16)
+script = ExtResource("1_bpic2")
+
+[node name="NormalBrick" type="Sprite2D" parent="Brick"]
+texture = ExtResource("2_8jo1y")
+
+[node name="BreakBrick" type="CPUParticles2D" parent="Brick"]
+emitting = false
+amount = 10
+lifetime = 0.35
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 150)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_eb7ot")
+color = Color(0.960784, 0.843137, 0.952941, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brick"]
+shape = SubResource("RectangleShape2D_xbmfq")

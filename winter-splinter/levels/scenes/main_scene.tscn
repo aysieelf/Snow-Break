@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://core/managers/window_scaler.gd" id="1_a2lsh"]
 [ext_resource type="Script" path="res://core/autoload/game_manager.gd" id="2_jbqsu"]
-[ext_resource type="PackedScene" uid="uid://bead5orntq4iw" path="res://levels/scenes/game_play.tscn" id="3_2ti61"]
+[ext_resource type="PackedScene" uid="uid://bq457st6cdcwu" path="res://levels/scenes/gameplay/gameplay.tscn" id="3_2ti61"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_a2lsh")

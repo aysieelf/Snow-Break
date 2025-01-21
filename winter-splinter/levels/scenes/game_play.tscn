@@ -101,8 +101,10 @@ texture = ExtResource("1_vr2j0")
 [node name="HUD" type="Node2D" parent="."]
 
 [node name="HeartBar" type="TextureProgressBar" parent="HUD"]
-offset_right = 149.0
-offset_bottom = 40.0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 167.0
+offset_bottom = 54.0
 min_value = 1.0
 max_value = 3.0
 value = 3.0
@@ -216,16 +218,21 @@ trail_lifetime = 0.75
 position = Vector2(393, 313)
 texture = ExtResource("13_w37wn")
 
-[node name="Bricks" type="Node2D" parent="GameEntities"]
+[node name="Bricks" type="GridContainer" parent="GameEntities"]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 10
+
+[node name="Brick" type="Node2D" parent="GameEntities/Bricks"]
 position = Vector2(400, 80)
 
-[node name="Brick" type="Area2D" parent="GameEntities/Bricks"]
+[node name="Brick" type="Area2D" parent="GameEntities/Bricks/Brick"]
 script = ExtResource("14_12bo2")
 
-[node name="NormalBrick1" type="Sprite2D" parent="GameEntities/Bricks/Brick"]
+[node name="NormalBrick1" type="Sprite2D" parent="GameEntities/Bricks/Brick/Brick"]
 texture = ExtResource("15_acb5b")
 
-[node name="BreakBrick" type="CPUParticles2D" parent="GameEntities/Bricks/Brick"]
+[node name="BreakBrick" type="CPUParticles2D" parent="GameEntities/Bricks/Brick/Brick"]
 emitting = false
 amount = 10
 lifetime = 0.35
@@ -240,5 +247,5 @@ scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_eb7ot")
 color = Color(0.960784, 0.843137, 0.952941, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameEntities/Bricks/Brick"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameEntities/Bricks/Brick/Brick"]
 shape = SubResource("RectangleShape2D_xbmfq")

@@ -5,9 +5,9 @@ signal score_changed(new_score)
 @warning_ignore("unused_signal")
 signal high_score_changed(high_scores)
 
-var current_score: int = 0
-var current_level: int = 1
-var current_healthbar: int = 3
+var current_score: int = Constants.INITIAL_SCORE
+var current_level: int = Constants.INITIAL_LEVEL
+var current_healthbar: int = Constants.INITIAL_HEALTHBAR
 var top_scores: Array[int] = []
 
 func add_points(points: int) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bq457st6cdcwu"]
+[gd_scene load_steps=18 format=3 uid="uid://bq457st6cdcwu"]
 
 [ext_resource type="Texture2D" uid="uid://bl6pyaeguems5" path="res://assets/sprites/backgrounds/playing-background.png" id="1_j4vxj"]
 [ext_resource type="Texture2D" uid="uid://cmyu03818eyj0" path="res://assets/sprites/backgrounds/healthbar-icon.png" id="2_7n56m"]
@@ -10,6 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://cv62cdqqkibrb" path="res://levels/scenes/gameplay/snowball_char.tscn" id="7_kxhki"]
 [ext_resource type="PackedScene" uid="uid://dxmrbdrv2svn2" path="res://levels/scenes/gameplay/paddle_char.tscn" id="8_pdjix"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/bricks_container.gd" id="14_2jmph"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6lpnr"]
+b = Vector2(0, 600)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0x05a"]
+a = Vector2(800, 0)
+b = Vector2(800, 600)
 
 [sub_resource type="Gradient" id="Gradient_sieec"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -39,6 +46,16 @@ font_size = 25
 font_color = Color(0.831373, 0.94902, 1, 1)
 
 [node name="GamePlay" type="Node2D"]
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+shape = SubResource("SegmentShape2D_6lpnr")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+shape = SubResource("SegmentShape2D_0x05a")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 800.0

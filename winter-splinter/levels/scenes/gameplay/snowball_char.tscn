@@ -11,30 +11,23 @@ var speed = Constants.BALL_INIT_SPEED
 var direction = Constants.BALL_INIT_VECTOR
 var is_moving = false
 
-
 func _ready():
+	velocity = speed * direction
+	
 	reset_ball()
 
 func _physics_process(delta):
-	if is_moving:
-		velocity = direction * speed
-		move_and_slide()
-		
-		for i in get_slide_collision_count():
-			var collision = get_slide_collision(i)
-			var normal = collision.get_normal()
-			
-			direction = direction.bounce(normal)
-
-		
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		velocity = velocity.bounce(collision.get_normal())
 
 func launch():
 	is_moving = true
 
 func reset_ball():
 	position = Constants.BALL_POS
-	is_moving = true
 	direction = Constants.BALL_INIT_VECTOR
+	is_moving = true
 "
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r1r0j"]
@@ -60,7 +53,7 @@ script = SubResource("GDScript_2yf86")
 
 [node name="SnowParticle1" type="GPUParticles2D" parent="."]
 scale = Vector2(0.2, 0.2)
-amount = 3
+amount = 2
 process_material = SubResource("ParticleProcessMaterial_r1r0j")
 texture = ExtResource("2_hk7ly")
 lifetime = 0.25
@@ -69,7 +62,7 @@ trail_lifetime = 0.75
 
 [node name="SnowParticle2" type="GPUParticles2D" parent="."]
 scale = Vector2(0.2, 0.2)
-amount = 2
+amount = 1
 process_material = SubResource("ParticleProcessMaterial_vjqqm")
 texture = ExtResource("3_2mx31")
 lifetime = 0.25

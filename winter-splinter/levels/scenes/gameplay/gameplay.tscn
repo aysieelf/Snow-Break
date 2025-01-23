@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bq457st6cdcwu"]
+[gd_scene load_steps=19 format=3 uid="uid://bq457st6cdcwu"]
 
 [ext_resource type="Texture2D" uid="uid://bl6pyaeguems5" path="res://assets/sprites/backgrounds/playing-background.png" id="1_j4vxj"]
 [ext_resource type="Texture2D" uid="uid://cmyu03818eyj0" path="res://assets/sprites/backgrounds/healthbar-icon.png" id="2_7n56m"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cm66phqwr0o3e" path="res://assets/sprites/snowball/snowflake-4.png" id="6_m17t3"]
 [ext_resource type="PackedScene" uid="uid://cv62cdqqkibrb" path="res://levels/scenes/gameplay/snowball_char.tscn" id="7_kxhki"]
 [ext_resource type="PackedScene" uid="uid://dxmrbdrv2svn2" path="res://levels/scenes/gameplay/paddle_char.tscn" id="8_pdjix"]
+[ext_resource type="Script" path="res://levels/scenes/gameplay/snowball.gd" id="12_mbj8d"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/bricks_container.gd" id="14_2jmph"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6lpnr"]
@@ -123,6 +124,7 @@ script = ExtResource("14_2jmph")
 
 [node name="Snowball" parent="GameEntities" instance=ExtResource("7_kxhki")]
 position = Vector2(400, 540)
+script = ExtResource("12_mbj8d")
 
 [node name="Paddle" parent="GameEntities" instance=ExtResource("8_pdjix")]
 position = Vector2(310, 550)

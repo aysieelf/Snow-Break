@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://cprmbvgpai80j"]
+[gd_scene load_steps=4 format=3 uid="uid://cprmbvgpai80j"]
 
-[ext_resource type="Script" path="res://levels/scenes/gameplay/brick-break.gd" id="1_3kyfa"]
 [ext_resource type="Texture2D" uid="uid://cl0svofy222qd" path="res://assets/sprites/bricks/normal-brick.png" id="2_l8358"]
 
 [sub_resource type="Curve" id="Curve_eb7ot"]
@@ -15,14 +14,14 @@ custom_minimum_size = Vector2(64, 32)
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Brick" type="Area2D" parent="."]
-position = Vector2(32, 16)
-script = ExtResource("1_3kyfa")
+[node name="Brick" type="StaticBody2D" parent="."]
 
 [node name="NormalBrick" type="Sprite2D" parent="Brick"]
+position = Vector2(32, 16)
 texture = ExtResource("2_l8358")
 
 [node name="BreakBrick" type="CPUParticles2D" parent="Brick"]
+position = Vector2(32, 16)
 emitting = false
 amount = 10
 lifetime = 0.35
@@ -38,4 +37,5 @@ scale_amount_curve = SubResource("Curve_eb7ot")
 color = Color(0.960784, 0.843137, 0.952941, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brick"]
+position = Vector2(32, 16)
 shape = SubResource("RectangleShape2D_xbmfq")

@@ -33,9 +33,9 @@ const MAX_SFX_VOLUME = 1.0
 const MAX_MUSIC_VOLUME = 1.0
 
 # Paddle settings
-const PADDLE_SPEED = 5 # TODO: this is a placeholder for now
-const PADDLE_HEIGHT = 20
-const PADDLE_WIDTH = 120
+const PADDLE_SPEED = 400.0
+const PADDLE_HEIGHT = 20 * 1.5
+const PADDLE_WIDTH = 120 * 1.5
 const PADDLE_POS = Vector2(336, 568) 
 const PADDLE_MIN_X = 0
 const PADDLE_MAX_X = 672

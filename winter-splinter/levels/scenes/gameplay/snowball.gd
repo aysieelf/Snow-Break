@@ -15,8 +15,8 @@ func _ready():
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		var collider = collision.get_collider().name
-		if "StrongBrick" in collider:
+		var collider = collision.get_collider()
+		if "StrongBrick" in collider.name:
 			collider.take_damage(ball_strength)
 		velocity = velocity.bounce(collision.get_normal())
 

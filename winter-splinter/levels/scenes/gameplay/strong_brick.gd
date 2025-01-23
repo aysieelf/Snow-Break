@@ -1,0 +1,21 @@
+extends StaticBody2D
+
+var max_health = 3
+var current_health = 3
+
+func _ready() -> void:
+	reset_brick()
+
+func take_damage(damage):
+	current_health -= damage
+	if current_health == 2:
+		$HealthBreakTwo.visible = true
+	elif current_health == 1:
+		$HealthBreakOne.visible = true
+	elif current_health <= 0:
+		# TODO: break animation later
+		queue_free() 
+		
+func reset_brick() -> void:
+	$HealthBreakTwo.visible = false
+	$HealthBreakOne.visible = false

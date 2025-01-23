@@ -1,7 +1,7 @@
 extends StaticBody2D
 
-var max_health = 3
-var current_health = 3
+var max_health = Constants.STRONG_BRICK_MAX_HEALTH
+var current_health = max_health
 
 func _ready() -> void:
 	reset_brick()

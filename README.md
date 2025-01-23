@@ -3,11 +3,11 @@
 Snow Break is my interpretation of the classic Breakout game. This is my first game in Godot and fourth game ever.
 
 ## Current Progress
-[█░░░░░░░░░] 21% (12/56)
+[██░░░░░░░░] 23% (13/56)
 
 - [x] Project setup (deadline: 15.01.2025) - _completed on 14.01.2025_
 - [x] Asset creation (deadline: 20.01.2025) - _completed on 19.01.2025_
-- [ ] Core gameplay (deadline: 27.01.2025)
+- [x] Core gameplay (deadline: 27.01.2025) - _completed on 27.01.2025_
 - [ ] Game logic (deadline: 3.02.2025)
 - [ ] User interface development (deadline: 8.02.2025)
 - [ ] Testing and debugging (deadline: 12.02.2025)

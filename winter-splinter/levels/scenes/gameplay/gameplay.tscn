@@ -1,19 +1,28 @@
-[gd_scene load_steps=27 format=3 uid="uid://bq457st6cdcwu"]
+[gd_scene load_steps=30 format=3 uid="uid://bq457st6cdcwu"]
 
 [ext_resource type="Texture2D" uid="uid://bl6pyaeguems5" path="res://assets/sprites/backgrounds/playing-background.png" id="1_j4vxj"]
 [ext_resource type="Texture2D" uid="uid://cmyu03818eyj0" path="res://assets/sprites/backgrounds/healthbar-icon.png" id="2_7n56m"]
 [ext_resource type="Texture2D" uid="uid://b6ucg56xfxvsw" path="res://assets/sprites/snowball/snowflake1.png" id="3_6apor"]
+[ext_resource type="Texture2D" uid="uid://c27tfi5271pmx" path="res://assets/sprites/powerups/ball_strengthener.png" id="3_slfmx"]
 [ext_resource type="Texture2D" uid="uid://bwsy835m8tj0t" path="res://assets/sprites/snowball/snowflake2.png" id="4_dg87a"]
 [ext_resource type="Texture2D" uid="uid://da2oesv0gmpma" path="res://assets/sprites/snowball/snowflake-3.png" id="5_bfog5"]
 [ext_resource type="Texture2D" uid="uid://cm66phqwr0o3e" path="res://assets/sprites/snowball/snowflake-4.png" id="6_m17t3"]
-[ext_resource type="Script" path="res://levels/scenes/paddle.gd" id="7_a7hoc"]
+[ext_resource type="Script" path="res://levels/scenes/gameplay/paddle.gd" id="7_a7hoc"]
 [ext_resource type="Texture2D" uid="uid://b85f6aigf2wvr" path="res://assets/sprites/paddle/paddle-base.png" id="8_0qhnf"]
 [ext_resource type="Texture2D" uid="uid://defqbxwpyle3b" path="res://assets/sprites/paddle/paddle-default-face.png" id="9_bx3ks"]
 [ext_resource type="Texture2D" uid="uid://ddtlfic4b8wi4" path="res://assets/sprites/paddle/paddle-levelup-face.png" id="10_2y6bx"]
 [ext_resource type="Texture2D" uid="uid://cewqwextwlbpp" path="res://assets/sprites/paddle/paddle-powerup-face.png" id="11_5v8r8"]
-[ext_resource type="Script" path="res://levels/scenes/snowball.gd" id="12_mbj8d"]
+[ext_resource type="Script" path="res://levels/scenes/gameplay/snowball.gd" id="12_mbj8d"]
 [ext_resource type="Texture2D" uid="uid://cyonv5hn0kcac" path="res://assets/sprites/snowball/snowball.png" id="13_7l4uy"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/bricks_container.gd" id="14_2jmph"]
+
+[sub_resource type="SystemFont" id="SystemFont_5jonv"]
+font_names = PackedStringArray("Courier New")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7i6s2"]
+font = SubResource("SystemFont_5jonv")
+font_size = 25
+font_color = Color(0.831373, 0.94902, 1, 1)
 
 [sub_resource type="Gradient" id="Gradient_sieec"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -92,15 +101,51 @@ texture = ExtResource("1_j4vxj")
 
 [node name="HUD" type="Node2D" parent="."]
 
-[node name="HeartBar" type="TextureProgressBar" parent="HUD"]
+[node name="ControlHUD" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 50.0
+
+[node name="HeartBar" type="TextureProgressBar" parent="HUD/ControlHUD"]
+layout_mode = 2
 offset_left = 18.0
 offset_top = 14.0
-offset_right = 167.0
-offset_bottom = 54.0
+offset_right = 105.0
+offset_bottom = 40.0
 min_value = 1.0
 max_value = 3.0
 value = 3.0
 texture_progress = ExtResource("2_7n56m")
+
+[node name="GridContainer" type="GridContainer" parent="HUD/ControlHUD"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 10.0
+offset_right = 550.0
+offset_bottom = 50.0
+theme_override_constants/h_separation = 30
+columns = 2
+
+[node name="Score" type="Label" parent="HUD/ControlHUD/GridContainer"]
+layout_mode = 2
+text = "score: 0"
+label_settings = SubResource("LabelSettings_7i6s2")
+
+[node name="Level" type="Label" parent="HUD/ControlHUD/GridContainer"]
+layout_mode = 2
+text = "level: 0"
+label_settings = SubResource("LabelSettings_7i6s2")
+
+[node name="CurrentPowerUp" type="Node2D" parent="HUD/ControlHUD"]
+position = Vector2(700, 20)
+
+[node name="Strength" type="Sprite2D" parent="HUD/ControlHUD/CurrentPowerUp"]
+texture = ExtResource("3_slfmx")
+
+[node name="Timer" type="Timer" parent="HUD/ControlHUD/CurrentPowerUp"]
+wait_time = 10.0
+one_shot = true
 
 [node name="GameEntities" type="Node2D" parent="."]
 
@@ -138,6 +183,28 @@ texture = ExtResource("6_m17t3")
 lifetime = 19.0
 randomness = 0.52
 collision_base_size = 0.0
+
+[node name="ControlBricksContainer" type="Control" parent="GameEntities"]
+custom_minimum_size = Vector2(800, 250)
+layout_mode = 3
+anchors_preset = 0
+offset_top = 50.0
+offset_right = 800.0
+offset_bottom = 300.0
+
+[node name="BricksContainer" type="GridContainer" parent="GameEntities/ControlBricksContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_right = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 11
+script = ExtResource("14_2jmph")
 
 [node name="Paddle" type="Node2D" parent="GameEntities"]
 position = Vector2(400, 570)
@@ -209,25 +276,3 @@ trail_lifetime = 0.75
 [node name="SnowballBase" type="Sprite2D" parent="GameEntities/Snowball"]
 position = Vector2(393, 313)
 texture = ExtResource("13_7l4uy")
-
-[node name="ControlBricksContainer" type="Control" parent="GameEntities"]
-custom_minimum_size = Vector2(800, 250)
-layout_mode = 3
-anchors_preset = 0
-offset_top = 50.0
-offset_right = 800.0
-offset_bottom = 300.0
-
-[node name="BricksContainer" type="GridContainer" parent="GameEntities/ControlBricksContainer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 26.0
-offset_right = -26.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 4
-columns = 11
-script = ExtResource("14_2jmph")

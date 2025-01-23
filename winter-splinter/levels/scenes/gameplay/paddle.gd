@@ -17,4 +17,4 @@ func _physics_process(delta):
 	# Apply movement
 	move_and_slide()
 	
-	global_position.x = clamp(global_position.x, 0, get_viewport_rect().size.x)
+	global_position.x = clamp(global_position.x, 0, Constants.WINDOW_WIDTH - Constants.PADDLE_WIDTH)

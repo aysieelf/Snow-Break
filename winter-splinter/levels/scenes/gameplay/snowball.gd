@@ -1,9 +1,22 @@
-extends Node2D
+extends CharacterBody2D
 
-func _process(delta):
-	# Следваме само по X оста
-	var target_x = get_global_mouse_position().x
-	# Запазваме текущата Y позиция
-	var current_y = global_position.y
-	# Обновяваме позицията
-	global_position = Vector2(target_x, current_y)
+var speed = Constants.BALL_INIT_SPEED
+var direction = Constants.BALL_INIT_VECTOR
+var is_moving = false
+
+
+func _ready():
+	reset_ball()
+
+func _physics_process(delta):
+	if is_moving:
+		velocity = direction * speed
+		move_and_slide()
+
+func launch():
+	is_moving = true
+
+func reset_ball():
+	position = Constants.BALL_POS
+	is_moving = false
+	direction = Constants.BALL_INIT_VECTOR

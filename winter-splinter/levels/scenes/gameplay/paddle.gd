@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 func _ready():
+	reset_paddle()
 	#GameManager.powerup_activated.connect(_on_powerup_activated)
 	#GameManager.powerup_ended.connect(_on_powerup_deactivated)
 	GameManager.level_up_screen_activated.connect(_on_level_up_screen_activated)
@@ -50,3 +51,6 @@ func _hide_all_faces() -> void:
 	$LevelupFace.visible = false
 	$PowerupFace.visible = false
 	$StrengthUpGlow.visible = false
+	
+func reset_paddle():
+	position = Constants.PADDLE_POS

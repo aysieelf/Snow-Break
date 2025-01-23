@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bree7yhldvddj"]
+[gd_scene load_steps=14 format=3 uid="uid://dxmrbdrv2svn2"]
 
-[ext_resource type="Script" path="res://levels/scenes/gameplay/paddle.gd" id="1_k07ro"]
-[ext_resource type="Texture2D" uid="uid://b85f6aigf2wvr" path="res://assets/sprites/paddle/paddle-base.png" id="2_m1rju"]
-[ext_resource type="Texture2D" uid="uid://defqbxwpyle3b" path="res://assets/sprites/paddle/paddle-default-face.png" id="3_wat70"]
-[ext_resource type="Texture2D" uid="uid://ddtlfic4b8wi4" path="res://assets/sprites/paddle/paddle-levelup-face.png" id="4_myl7s"]
-[ext_resource type="Texture2D" uid="uid://cewqwextwlbpp" path="res://assets/sprites/paddle/paddle-powerup-face.png" id="5_wyp74"]
+[ext_resource type="Script" path="res://levels/scenes/gameplay/paddle.gd" id="1_lk2v1"]
+[ext_resource type="Texture2D" uid="uid://b85f6aigf2wvr" path="res://assets/sprites/paddle/paddle-base.png" id="2_jp71u"]
+[ext_resource type="Texture2D" uid="uid://defqbxwpyle3b" path="res://assets/sprites/paddle/paddle-default-face.png" id="3_advso"]
+[ext_resource type="Texture2D" uid="uid://ddtlfic4b8wi4" path="res://assets/sprites/paddle/paddle-levelup-face.png" id="4_dy2tb"]
+[ext_resource type="Texture2D" uid="uid://cewqwextwlbpp" path="res://assets/sprites/paddle/paddle-powerup-face.png" id="5_tb3m1"]
 
 [sub_resource type="Gradient" id="Gradient_yqwxj"]
 colors = PackedColorArray(0.827451, 0.952941, 0.988235, 0.337255, 1, 1, 1, 0)
@@ -42,39 +42,35 @@ fill_from = Vector2(5, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g442"]
 size = Vector2(237.333, 38.6666)
 
-[node name="Paddle" type="Node2D"]
-position = Vector2(400, 570)
-scale = Vector2(0.75, 0.75)
+[node name="Paddle" type="CharacterBody2D"]
+script = ExtResource("1_lk2v1")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_k07ro")
-
-[node name="Trail" type="GPUParticles2D" parent="CharacterBody2D"]
+[node name="Trail" type="GPUParticles2D" parent="."]
 position = Vector2(120, 30)
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_g3ip0")
 texture = SubResource("GradientTexture2D_uprtx")
 fixed_fps = 60
 
-[node name="PaddleBase" type="Sprite2D" parent="CharacterBody2D"]
+[node name="PaddleBase" type="Sprite2D" parent="."]
 position = Vector2(120, 20)
-texture = ExtResource("2_m1rju")
+texture = ExtResource("2_jp71u")
 
-[node name="DefaultFace" type="Sprite2D" parent="CharacterBody2D"]
+[node name="DefaultFace" type="Sprite2D" parent="."]
 position = Vector2(120, 20)
-texture = ExtResource("3_wat70")
+texture = ExtResource("3_advso")
 
-[node name="LevelupFace" type="Sprite2D" parent="CharacterBody2D"]
+[node name="LevelupFace" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(120, 20)
-texture = ExtResource("4_myl7s")
+texture = ExtResource("4_dy2tb")
 
-[node name="PowerupFace" type="Sprite2D" parent="CharacterBody2D"]
+[node name="PowerupFace" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(120, 20)
-texture = ExtResource("5_wyp74")
+texture = ExtResource("5_tb3m1")
 
-[node name="StrengthUpGlow" type="PointLight2D" parent="CharacterBody2D"]
+[node name="StrengthUpGlow" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(120, 20)
 scale = Vector2(1.04167, 1.2)
@@ -84,6 +80,6 @@ blend_mode = 2
 texture = SubResource("GradientTexture2D_v1khd")
 height = 128.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(120, 20.6667)
 shape = SubResource("RectangleShape2D_5g442")

@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv62cdqqkibrb"]
+
+[ext_resource type="Texture2D" uid="uid://b6ucg56xfxvsw" path="res://assets/sprites/snowball/snowflake1.png" id="2_hk7ly"]
+[ext_resource type="Texture2D" uid="uid://bwsy835m8tj0t" path="res://assets/sprites/snowball/snowflake2.png" id="3_2mx31"]
+[ext_resource type="Texture2D" uid="uid://cyonv5hn0kcac" path="res://assets/sprites/snowball/snowball.png" id="4_01vax"]
+
+[sub_resource type="GDScript" id="GDScript_2yf86"]
+script/source = "extends CharacterBody2D
+
+var speed = Constants.BALL_INIT_SPEED
+var direction = Constants.BALL_INIT_VECTOR
+var is_moving = false
+
+
+func _ready():
+	reset_ball()
+
+func _physics_process(delta):
+	if is_moving:
+		velocity = direction * speed
+		move_and_slide()
+
+		
+
+func launch():
+	is_moving = true
+
+func reset_ball():
+	position = Constants.BALL_POS
+	is_moving = false
+	direction = Constants.BALL_INIT_VECTOR
+"
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r1r0j"]
+lifetime_randomness = 0.51
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 20.87
+spread = 28.374
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjqqm"]
+lifetime_randomness = 0.61
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 5.41
+spread = 28.374
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mooxu"]
+
+[node name="Snowball" type="CharacterBody2D"]
+script = SubResource("GDScript_2yf86")
+
+[node name="SnowParticle1" type="GPUParticles2D" parent="."]
+scale = Vector2(0.2, 0.2)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_r1r0j")
+texture = ExtResource("2_hk7ly")
+lifetime = 0.25
+randomness = 0.87
+trail_lifetime = 0.75
+
+[node name="SnowParticle2" type="GPUParticles2D" parent="."]
+scale = Vector2(0.2, 0.2)
+amount = 2
+process_material = SubResource("ParticleProcessMaterial_vjqqm")
+texture = ExtResource("3_2mx31")
+lifetime = 0.25
+randomness = 0.87
+trail_lifetime = 0.75
+
+[node name="SnowballBase" type="Sprite2D" parent="."]
+texture = ExtResource("4_01vax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mooxu")

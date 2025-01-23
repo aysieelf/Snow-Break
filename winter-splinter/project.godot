@@ -31,6 +31,7 @@ window/size/window_width_override=800
 window/size/window_height_override=600
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+window/vsync/vsync_mode=2
 
 [file_customization]
 

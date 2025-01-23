@@ -14,13 +14,13 @@ custom_minimum_size = Vector2(64, 32)
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Brick" type="StaticBody2D" parent="."]
+[node name="NormalBrick" type="StaticBody2D" parent="."]
 
-[node name="NormalBrick" type="Sprite2D" parent="Brick"]
+[node name="NormalBrick" type="Sprite2D" parent="NormalBrick"]
 position = Vector2(32, 16)
 texture = ExtResource("2_l8358")
 
-[node name="BreakBrick" type="CPUParticles2D" parent="Brick"]
+[node name="BreakBrick" type="CPUParticles2D" parent="NormalBrick"]
 position = Vector2(32, 16)
 emitting = false
 amount = 10
@@ -36,6 +36,6 @@ scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_eb7ot")
 color = Color(0.960784, 0.843137, 0.952941, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Brick"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NormalBrick"]
 position = Vector2(32, 16)
 shape = SubResource("RectangleShape2D_xbmfq")

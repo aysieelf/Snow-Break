@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bq457st6cdcwu"]
+[gd_scene load_steps=16 format=3 uid="uid://bq457st6cdcwu"]
 
 [ext_resource type="Texture2D" uid="uid://bl6pyaeguems5" path="res://assets/sprites/backgrounds/playing-background.png" id="1_j4vxj"]
 [ext_resource type="Texture2D" uid="uid://cmyu03818eyj0" path="res://assets/sprites/backgrounds/healthbar-icon.png" id="2_7n56m"]
@@ -7,9 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bwsy835m8tj0t" path="res://assets/sprites/snowball/snowflake2.png" id="4_dg87a"]
 [ext_resource type="Texture2D" uid="uid://da2oesv0gmpma" path="res://assets/sprites/snowball/snowflake-3.png" id="5_bfog5"]
 [ext_resource type="Texture2D" uid="uid://cm66phqwr0o3e" path="res://assets/sprites/snowball/snowflake-4.png" id="6_m17t3"]
-[ext_resource type="PackedScene" uid="uid://bree7yhldvddj" path="res://levels/scenes/gameplay/paddle.tscn" id="7_xttev"]
-[ext_resource type="Script" path="res://levels/scenes/gameplay/snowball.gd" id="12_mbj8d"]
-[ext_resource type="Texture2D" uid="uid://cyonv5hn0kcac" path="res://assets/sprites/snowball/snowball.png" id="13_7l4uy"]
+[ext_resource type="PackedScene" uid="uid://cv62cdqqkibrb" path="res://levels/scenes/gameplay/snowball_char.tscn" id="7_kxhki"]
+[ext_resource type="PackedScene" uid="uid://dxmrbdrv2svn2" path="res://levels/scenes/gameplay/paddle_char.tscn" id="8_pdjix"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/bricks_container.gd" id="14_2jmph"]
 
 [sub_resource type="Gradient" id="Gradient_sieec"]
@@ -30,22 +29,6 @@ damping_max = 5.0
 scale_min = 0.25
 scale_max = 1.5
 color_ramp = SubResource("GradientTexture1D_5hrfe")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r1r0j"]
-lifetime_randomness = 0.51
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 20.87
-spread = 28.374
-gravity = Vector3(0, 98, 0)
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjqqm"]
-lifetime_randomness = 0.61
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 5.41
-spread = 28.374
-gravity = Vector3(0, 98, 0)
 
 [sub_resource type="SystemFont" id="SystemFont_5jonv"]
 font_names = PackedStringArray("Courier New")
@@ -121,35 +104,12 @@ theme_override_constants/v_separation = 4
 columns = 11
 script = ExtResource("14_2jmph")
 
-[node name="Paddle" parent="GameEntities" instance=ExtResource("7_xttev")]
+[node name="Snowball" parent="GameEntities" instance=ExtResource("7_kxhki")]
+position = Vector2(400, 540)
+
+[node name="Paddle" parent="GameEntities" instance=ExtResource("8_pdjix")]
 position = Vector2(310, 550)
-
-[node name="Snowball" type="Node2D" parent="GameEntities"]
-script = ExtResource("12_mbj8d")
-
-[node name="SnowParticle1" type="GPUParticles2D" parent="GameEntities/Snowball"]
-position = Vector2(393, 313)
-scale = Vector2(0.2, 0.2)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_r1r0j")
-texture = ExtResource("3_6apor")
-lifetime = 0.25
-randomness = 0.87
-trail_lifetime = 0.75
-
-[node name="SnowParticle2" type="GPUParticles2D" parent="GameEntities/Snowball"]
-position = Vector2(393, 313)
-scale = Vector2(0.2, 0.2)
-amount = 2
-process_material = SubResource("ParticleProcessMaterial_vjqqm")
-texture = ExtResource("4_dg87a")
-lifetime = 0.25
-randomness = 0.87
-trail_lifetime = 0.75
-
-[node name="SnowballBase" type="Sprite2D" parent="GameEntities/Snowball"]
-position = Vector2(393, 313)
-texture = ExtResource("13_7l4uy")
+scale = Vector2(0.75, 0.75)
 
 [node name="HUD" type="Node2D" parent="."]
 

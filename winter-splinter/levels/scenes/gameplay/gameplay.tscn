@@ -110,6 +110,7 @@ position = Vector2(400, 540)
 [node name="Paddle" parent="GameEntities" instance=ExtResource("8_pdjix")]
 position = Vector2(310, 550)
 scale = Vector2(0.75, 0.75)
+motion_mode = 1
 
 [node name="HUD" type="Node2D" parent="."]
 

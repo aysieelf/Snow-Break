@@ -36,17 +36,17 @@ const MAX_MUSIC_VOLUME = 1.0
 const PADDLE_SPEED = 400.0
 const PADDLE_HEIGHT = 20 * 1.5
 const PADDLE_WIDTH = 120 * 1.5
-const PADDLE_POS = Vector2(336, 568) 
+const PADDLE_POS = Vector2(310, 550) 
 const PADDLE_MIN_X = 0
 const PADDLE_MAX_X = 672
 
 # Snowball settings
-const BALL_INIT_SPEED = 5 # TODO: this is a placeholder for now
+const BALL_INIT_SPEED = 250
 const BALL_MAX_SPEED = 10
 const BALL_ACCELERATION = 0.1
 const BALL_HEIGHT = 20
 const BALL_WIDTH = 20
-const BALL_POS = Vector2(392, 552)
+const BALL_POS = Vector2(400, 540)
 const BALL_INIT_VECTOR = Vector2(0, -1) # up
 const MIN_BOUNCE_ANGLE = deg_to_rad(-60)
 const MAX_BOUNCE_ANGLE = deg_to_rad(60)

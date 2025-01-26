@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bq457st6cdcwu"]
+[gd_scene load_steps=20 format=3 uid="uid://bq457st6cdcwu"]
 
 [ext_resource type="Texture2D" uid="uid://bl6pyaeguems5" path="res://assets/sprites/backgrounds/playing-background.png" id="1_j4vxj"]
 [ext_resource type="Texture2D" uid="uid://cmyu03818eyj0" path="res://assets/sprites/backgrounds/healthbar-icon.png" id="2_7n56m"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dxmrbdrv2svn2" path="res://levels/scenes/gameplay/paddle_char.tscn" id="8_pdjix"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/snowball.gd" id="12_mbj8d"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/bricks_container.gd" id="14_2jmph"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xuo5k"]
+b = Vector2(800, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6lpnr"]
 b = Vector2(0, 600)
@@ -47,6 +50,11 @@ font_size = 25
 font_color = Color(0.831373, 0.94902, 1, 1)
 
 [node name="GamePlay" type="Node2D"]
+
+[node name="Top" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+shape = SubResource("SegmentShape2D_xuo5k")
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 

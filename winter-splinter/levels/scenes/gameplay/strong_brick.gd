@@ -13,7 +13,9 @@ func take_damage(damage):
 	elif current_health == 1:
 		$HealthBreakOne.visible = true
 	elif current_health <= 0:
-		# TODO: break animation later
+		$BrickBreak.emitting = true
+		$BrickBreak.process_mode = Node.PROCESS_MODE_ALWAYS
+		$BrickBreak.reparent(get_parent()) 
 		queue_free() 
 		
 func reset_brick() -> void:

@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://lykaku0k4ymq"]
+[gd_scene load_steps=10 format=3 uid="uid://lykaku0k4ymq"]
 
+[ext_resource type="Script" path="res://levels/scenes/gameplay/normal_brick.gd" id="1_iijlr"]
 [ext_resource type="Texture2D" uid="uid://bu0ntfxejovan" path="res://assets/sprites/bricks/power-up-brick.png" id="2_f3338"]
 
 [sub_resource type="Curve" id="Curve_eb7ot"]
@@ -9,6 +10,33 @@ point_count = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbmfq"]
 size = Vector2(64, 32)
 
+[sub_resource type="Gradient" id="Gradient_j4mit"]
+offsets = PackedFloat32Array(0.470085, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2nvew"]
+gradient = SubResource("Gradient_j4mit")
+
+[sub_resource type="Curve" id="Curve_iacl2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.797945, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_km5qh"]
+curve = SubResource("Curve_iacl2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_onvlx"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_km5qh")
+color = Color(0.72549, 0.968627, 0.847059, 1)
+color_ramp = SubResource("GradientTexture1D_2nvew")
+
 [node name="ControlBrick" type="Control"]
 custom_minimum_size = Vector2(64, 32)
 layout_mode = 3
@@ -16,6 +44,7 @@ anchors_preset = 0
 
 [node name="PowerupBrick" type="StaticBody2D" parent="."]
 position = Vector2(32, 16)
+script = ExtResource("1_iijlr")
 
 [node name="NormalBrick" type="Sprite2D" parent="PowerupBrick"]
 texture = ExtResource("2_f3338")
@@ -37,3 +66,11 @@ color = Color(0.960784, 0.843137, 0.952941, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PowerupBrick"]
 shape = SubResource("RectangleShape2D_xbmfq")
+
+[node name="BrickBreak" type="GPUParticles2D" parent="PowerupBrick"]
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_onvlx")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0

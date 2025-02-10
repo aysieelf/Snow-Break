@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bwsy835m8tj0t" path="res://assets/sprites/snowball/snowflake2.png" id="4_dg87a"]
 [ext_resource type="Texture2D" uid="uid://da2oesv0gmpma" path="res://assets/sprites/snowball/snowflake-3.png" id="5_bfog5"]
 [ext_resource type="Texture2D" uid="uid://cm66phqwr0o3e" path="res://assets/sprites/snowball/snowflake-4.png" id="6_m17t3"]
-[ext_resource type="PackedScene" uid="uid://cv62cdqqkibrb" path="res://levels/scenes/gameplay/snowball_char.tscn" id="7_kxhki"]
+[ext_resource type="PackedScene" uid="uid://cohrny2gb8i8y" path="res://levels/scenes/gameplay/snowball_char.tscn" id="7_kxhki"]
 [ext_resource type="PackedScene" uid="uid://dxmrbdrv2svn2" path="res://levels/scenes/gameplay/paddle_char.tscn" id="8_pdjix"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/snowball.gd" id="12_mbj8d"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/bricks_container.gd" id="14_2jmph"]

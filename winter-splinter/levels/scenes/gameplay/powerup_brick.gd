@@ -6,7 +6,7 @@ func take_damage(damage):
 	$BrickBreak.emitting = true
 	$BrickBreak.process_mode = Node.PROCESS_MODE_ALWAYS
 	$BrickBreak.reparent(get_parent())
-	
+	SoundManager.play_sfx("brick-break")
 	spawn_powerup()  # Try to spawn a power-up on destruction
 
 	queue_free()

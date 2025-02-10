@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://blhrsaw2a6plx"]
+[gd_scene load_steps=9 format=3 uid="uid://blhrsaw2a6plx"]
 
 [ext_resource type="Texture2D" uid="uid://bhaskw1m4fp3i" path="res://assets/sprites/powerups/extra_points.png" id="1_2u6p1"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/bonus_points_powerup.gd" id="1_b1oc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsfhl"]
 size = Vector2(32, 32)
+
+[sub_resource type="Gradient" id="Gradient_icyn1"]
+offsets = PackedFloat32Array(0.470085, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pklna"]
+gradient = SubResource("Gradient_icyn1")
+
+[sub_resource type="Curve" id="Curve_3drmg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.797945, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xcsps"]
+curve = SubResource("Curve_3drmg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fi2vu"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_xcsps")
+color = Color(0.286275, 0.388235, 0.333333, 1)
+color_ramp = SubResource("GradientTexture1D_pklna")
 
 [node name="BonusPointsPowerup" type="Area2D"]
 script = ExtResource("1_b1oc1")
@@ -14,3 +41,11 @@ texture = ExtResource("1_2u6p1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vsfhl")
+
+[node name="PowerupBreak" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_fi2vu")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0

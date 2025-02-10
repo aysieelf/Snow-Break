@@ -33,7 +33,8 @@ fill_to = Vector2(0.5, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g442"]
 size = Vector2(240, 40)
 
-[node name="Paddle" type="CharacterBody2D"]
+[node name="Paddle" type="CharacterBody2D" groups=["paddle"]]
+collision_mask = 3
 script = ExtResource("1_lk2v1")
 
 [node name="Trail" type="GPUParticles2D" parent="."]

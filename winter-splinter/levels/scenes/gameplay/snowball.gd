@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 var speed = Constants.BALL_INIT_SPEED
 var direction = Constants.BALL_INIT_VECTOR
-var is_moving = false
-var ball_strength = 1
+var is_moving: bool = false
+var ball_strength: int = 1
 
 func _ready():
+	GameManager.connect("powerup_activated", _on_power_up_activated)
+	GameManager.connect("powerup_ended", _on_power_up_deactivated)
 	velocity = speed * direction
 	reset_ball()
 

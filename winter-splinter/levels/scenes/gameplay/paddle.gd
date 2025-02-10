@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
 func _ready():
-	print("Paddle is ready")
 	reset_paddle()
 	add_to_group("paddle")
-	#GameManager.powerup_activated.connect(_on_powerup_activated)
-	#GameManager.powerup_ended.connect(_on_powerup_deactivated)
+	GameManager.connect("powerup_activated", _on_power_up_activated)
+	GameManager.connect("powerup_ended", _on_power_up_deactivated)
 	GameManager.level_up_screen_activated.connect(_on_level_up_screen_activated)
 	GameManager.game_over_screen_activated.connect(_on_game_over_screen_activated)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxmrbdrv2svn2"]
+[gd_scene load_steps=12 format=3 uid="uid://dxmrbdrv2svn2"]
 
 [ext_resource type="Script" path="res://levels/scenes/gameplay/paddle.gd" id="1_lk2v1"]
 [ext_resource type="Texture2D" uid="uid://b85f6aigf2wvr" path="res://assets/sprites/paddle/paddle-base.png" id="2_jp71u"]
@@ -30,15 +30,6 @@ height = 4
 fill_from = Vector2(0.470085, 0)
 fill_to = Vector2(0.5, 1)
 
-[sub_resource type="Gradient" id="Gradient_oueyy"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_v1khd"]
-gradient = SubResource("Gradient_oueyy")
-width = 120
-height = 20
-fill = 1
-fill_from = Vector2(5, 0)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g442"]
 size = Vector2(240, 40)
 
@@ -69,16 +60,6 @@ texture = ExtResource("4_dy2tb")
 visible = false
 position = Vector2(120, 20)
 texture = ExtResource("5_tb3m1")
-
-[node name="StrengthUpGlow" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(120, 20)
-scale = Vector2(1.04167, 1.2)
-color = Color(0.364706, 0.309804, 0.431373, 1)
-energy = 2.94
-blend_mode = 2
-texture = SubResource("GradientTexture2D_v1khd")
-height = 128.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(120, 20)

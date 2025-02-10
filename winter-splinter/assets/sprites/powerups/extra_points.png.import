@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc1hctc206f4v"
-path="res://.godot/imported/speed-multiplier.png-aad45e26ce3f61742288af8feb4a4481.ctex"
+uid="uid://bhaskw1m4fp3i"
+path="res://.godot/imported/extra_points.png-19c4b7389a860cd6254b3acea7750904.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/powerups/speed-multiplier.png"
-dest_files=["res://.godot/imported/speed-multiplier.png-aad45e26ce3f61742288af8feb4a4481.ctex"]
+source_file="res://assets/sprites/powerups/extra_points.png"
+dest_files=["res://.godot/imported/extra_points.png-19c4b7389a860cd6254b3acea7750904.ctex"]
 
 [params]
 

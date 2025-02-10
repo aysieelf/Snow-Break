@@ -2,8 +2,19 @@ extends Node
 
 signal level_up_screen_activated
 signal game_over_screen_activated
+signal powerup_activated()
+signal powerup_ended()
 
 var current_state: Constants.GameState = Constants.GameState.MENU
+var powerup_timer: Timer
+
+func _ready():
+	powerup_timer = Timer.new()
+	add_child(powerup_timer)
+	powerup_timer.connect("timeout", _on_PowerUpTimer_timeout)  # Connect the timeout signal
+	powerup_timer.one_shot = true
+	powerup_timer.wait_time = Constants.POWERUP_TIMER
+
 
 func start_game() -> void:
 	current_state = Constants.GameState.PLAYING
@@ -37,9 +48,15 @@ func quit_to_menu() -> void:
 func quit() -> void:
 	get_tree().quit()
 	
-func increase_ball_strength() -> void:
-	# 1. change ball's strength
-	# 2. show powerup in hud
-	# 3. activate timer
-	pass
-	
+func increase_ball_strength():
+	emit_signal("powerup_activated")
+	print("Powerup should be activating now")
+	start_powerup_timer()
+
+func start_powerup_timer():
+	powerup_timer.start()
+	print("⏳ Power-up timer started!")
+
+func _on_PowerUpTimer_timeout():
+	emit_signal("powerup_ended")  # Emit signal when power-up ends
+	print("💨 Power-up expired, ball strength reset to 1!")

@@ -91,11 +91,11 @@ Core Gameplay (800x600 window):
   - [x] Different block types
   - [x] Health system for stronger blocks
   - [x] Break animation
-- [ ] Create Power-up node:
+- [x] Create Power-up node:
   - [x] Power-up base class
   - [x] Different power-up types
-  - [ ] Collection detection
-  - [ ] Effect application
+  - [x] Collection detection
+  - [x] Effect application
 - [x] Implement game physics:
   - [x] Ball bouncing mechanics
   - [x] Platform-ball interaction
@@ -104,11 +104,11 @@ Core Gameplay (800x600 window):
 - [x] Create particle systems:
   - [x] Snow effect manager
   - [x] Break effect manager
-  - [ ] Collection effect manager
-- [ ] Implement level system:
-  - [ ] Level data structure
-  - [ ] Block layout system
-  - [ ] Difficulty progression
+  - [x] Collection effect manager
+- [x] Implement level system:
+  - [x] Level data structure
+  - [x] Block layout system
+  - [ ] Difficulty progression - speed progression
 - [ ] Create sound system:
   - [ ] Sound effect manager
   - [ ] Background music handler

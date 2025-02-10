@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsjvjqapa6woa"]
+
+[ext_resource type="Texture2D" uid="uid://c27tfi5271pmx" path="res://assets/sprites/powerups/ball_strengthener.png" id="1_v4jyg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sgx8"]
+size = Vector2(32, 32)
+
+[node name="StrengthenerPowerup" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v4jyg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3sgx8")
+
+[node name="Timer" type="Timer" parent="."]

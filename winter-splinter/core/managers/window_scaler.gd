@@ -7,3 +7,5 @@ func _ready():
 	# On MacOS Retina displays are usually DPI > 180
 	if dpi > 180:
 		window.set_size(Vector2i(pixel_size.x * 2, pixel_size.y * 2))
+	
+	SoundManager.play_music()

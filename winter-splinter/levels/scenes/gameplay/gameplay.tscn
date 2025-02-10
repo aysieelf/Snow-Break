@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bq457st6cdcwu"]
+[gd_scene load_steps=23 format=3 uid="uid://bq457st6cdcwu"]
 
 [ext_resource type="Texture2D" uid="uid://bl6pyaeguems5" path="res://assets/sprites/backgrounds/playing-background.png" id="1_j4vxj"]
 [ext_resource type="Texture2D" uid="uid://cmyu03818eyj0" path="res://assets/sprites/backgrounds/healthbar-icon.png" id="2_7n56m"]
@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bwsy835m8tj0t" path="res://assets/sprites/snowball/snowflake2.png" id="4_dg87a"]
 [ext_resource type="Texture2D" uid="uid://da2oesv0gmpma" path="res://assets/sprites/snowball/snowflake-3.png" id="5_bfog5"]
 [ext_resource type="Texture2D" uid="uid://cm66phqwr0o3e" path="res://assets/sprites/snowball/snowflake-4.png" id="6_m17t3"]
-[ext_resource type="PackedScene" uid="uid://cohrny2gb8i8y" path="res://levels/scenes/gameplay/snowball_char.tscn" id="7_kxhki"]
+[ext_resource type="PackedScene" uid="uid://c5jtr8l3cl3tb" path="res://levels/scenes/gameplay/snowball.tscn" id="7_opuwq"]
 [ext_resource type="PackedScene" uid="uid://dxmrbdrv2svn2" path="res://levels/scenes/gameplay/paddle_char.tscn" id="8_pdjix"]
-[ext_resource type="Script" path="res://levels/scenes/gameplay/snowball.gd" id="12_mbj8d"]
+[ext_resource type="Script" path="res://levels/scenes/gameplay/score_level.gd" id="10_a553e"]
+[ext_resource type="Script" path="res://levels/scenes/gameplay/current_power_up.gd" id="10_e7ujt"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/bricks_container.gd" id="14_2jmph"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xuo5k"]
@@ -48,6 +49,13 @@ font_names = PackedStringArray("Courier New")
 font = SubResource("SystemFont_5jonv")
 font_size = 25
 font_color = Color(0.831373, 0.94902, 1, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_bj16l"]
+font_names = PackedStringArray("Courier New")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ye7yc"]
+font = SubResource("SystemFont_bj16l")
+font_size = 20
 
 [node name="GamePlay" type="Node2D"]
 
@@ -130,9 +138,8 @@ theme_override_constants/v_separation = 4
 columns = 11
 script = ExtResource("14_2jmph")
 
-[node name="Snowball" parent="GameEntities" instance=ExtResource("7_kxhki")]
+[node name="Snowball" parent="GameEntities" instance=ExtResource("7_opuwq")]
 position = Vector2(400, 540)
-script = ExtResource("12_mbj8d")
 
 [node name="Paddle" parent="GameEntities" instance=ExtResource("8_pdjix")]
 position = Vector2(310, 550)
@@ -166,6 +173,7 @@ offset_right = 560.0
 offset_bottom = 50.0
 theme_override_constants/h_separation = 30
 columns = 2
+script = ExtResource("10_a553e")
 
 [node name="Score" type="Label" parent="HUD/ControlHUD/GridContainer"]
 layout_mode = 2
@@ -179,12 +187,20 @@ label_settings = SubResource("LabelSettings_7i6s2")
 
 [node name="CurrentPowerUp" type="Node2D" parent="HUD/ControlHUD"]
 position = Vector2(700, 20)
+script = ExtResource("10_e7ujt")
 
 [node name="Icon" type="Sprite2D" parent="HUD/ControlHUD/CurrentPowerUp"]
-position = Vector2(0, 5)
+position = Vector2(-9, 3)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_slfmx")
 
 [node name="Timer" type="Timer" parent="HUD/ControlHUD/CurrentPowerUp"]
-wait_time = 10.0
+wait_time = 20.0
 one_shot = true
+
+[node name="TimerLabel" type="Label" parent="HUD/ControlHUD/CurrentPowerUp"]
+offset_left = 11.0
+offset_top = -6.0
+offset_right = 83.0
+offset_bottom = 17.0
+label_settings = SubResource("LabelSettings_ye7yc")

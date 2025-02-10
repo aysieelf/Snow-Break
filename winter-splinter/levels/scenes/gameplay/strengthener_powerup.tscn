@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsjvjqapa6woa"]
+[gd_scene load_steps=4 format=3 uid="uid://dsjvjqapa6woa"]
 
+[ext_resource type="Script" path="res://levels/scenes/gameplay/strengthener_powerup.gd" id="1_l1r8s"]
 [ext_resource type="Texture2D" uid="uid://c27tfi5271pmx" path="res://assets/sprites/powerups/ball_strengthener.png" id="1_v4jyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sgx8"]
 size = Vector2(32, 32)
 
 [node name="StrengthenerPowerup" type="Area2D"]
+script = ExtResource("1_l1r8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_v4jyg")

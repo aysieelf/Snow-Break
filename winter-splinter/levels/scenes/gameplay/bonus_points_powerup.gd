@@ -1,6 +1,6 @@
 extends Area2D
 
-var fall_speed: float = Constants.FALL_SPEED
+var fall_speed: float = int(Constants.FALL_SPEED + ScoreManager.current_level*10)
 var collected: bool = false
 
 func _ready():

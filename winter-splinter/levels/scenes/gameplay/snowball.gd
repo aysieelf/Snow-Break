@@ -2,13 +2,16 @@ extends CharacterBody2D
 
 var speed = Constants.BALL_INIT_SPEED
 var direction = Constants.BALL_INIT_VECTOR
-var is_moving: bool = false
+var is_moving = false
 var ball_strength: int = 1
 
 func _ready():
+	print("Snowball _ready() called!")
 	GameManager.connect("powerup_activated", _on_power_up_activated)
 	GameManager.connect("powerup_ended", _on_power_up_deactivated)
+	print("Initial ball strength: ", ball_strength)  # Check the initial ball strength
 	velocity = speed * direction
+	
 	reset_ball()
 
 func _physics_process(delta):

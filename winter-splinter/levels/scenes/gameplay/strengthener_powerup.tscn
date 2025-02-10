@@ -30,7 +30,7 @@ initial_velocity_max = 100.0
 gravity = Vector3(0, 98, 0)
 scale_max = 5.0
 scale_curve = SubResource("CurveTexture_d5ts5")
-color = Color(0.498039, 0.462745, 0.568627, 1)
+color = Color(0.839216, 0.682353, 0.721569, 1)
 color_ramp = SubResource("GradientTexture1D_0520q")
 
 [node name="StrengthenerPowerup" type="Area2D"]
@@ -40,7 +40,6 @@ script = ExtResource("1_l1r8s")
 texture = ExtResource("1_v4jyg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_3sgx8")
 
 [node name="PowerupBreak" type="GPUParticles2D" parent="."]

@@ -36,3 +36,10 @@ func quit_to_menu() -> void:
 
 func quit() -> void:
 	get_tree().quit()
+	
+func increase_ball_strength() -> void:
+	# 1. change ball's strength
+	# 2. show powerup in hud
+	# 3. activate timer
+	pass
+	

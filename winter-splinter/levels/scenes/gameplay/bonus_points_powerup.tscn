@@ -30,7 +30,7 @@ initial_velocity_max = 100.0
 gravity = Vector3(0, 98, 0)
 scale_max = 5.0
 scale_curve = SubResource("CurveTexture_xcsps")
-color = Color(0.286275, 0.388235, 0.333333, 1)
+color = Color(0.870588, 0.886275, 0.752941, 1)
 color_ramp = SubResource("GradientTexture1D_pklna")
 
 [node name="BonusPointsPowerup" type="Area2D"]

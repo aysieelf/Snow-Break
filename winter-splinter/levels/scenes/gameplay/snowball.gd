@@ -22,6 +22,7 @@ func _physics_process(delta):
 
 		# Handle collision with platform
 		if "Paddle" in collider.name:
+			SoundManager.play_sfx("snowball-bounce")
 			_handle_platform_bounce(collider, collision.get_position())
 
 		# Handle collision with bricks
@@ -36,6 +37,9 @@ func _physics_process(delta):
 			if angle < Constants.MIN_BOUNCE_ANGLE or angle > PI - Constants.MIN_BOUNCE_ANGLE:
 				new_direction = Vector2(new_direction.x, sign(new_direction.y) * sin(Constants.MIN_BOUNCE_ANGLE)).normalized()
 			velocity = new_direction * speed
+	
+	if position.y > Constants.WINDOW_HEIGHT:
+		snowball_out()
 
 func _handle_platform_bounce(platform, collision_point):
 	var collision_shape = platform.get_node("CollisionShape2D") 
@@ -73,6 +77,12 @@ func _handle_platform_bounce(platform, collision_point):
 	# Keep ball speed constant
 	velocity = new_direction * speed
 
+func snowball_out() -> void:
+	SoundManager.play_sfx("snowball-out")
+	reset_ball()
+	var health = ScoreManager.decrease_healthbar()
+	if health < 0:
+		GameManager.game_over_screen()
 
 func launch():
 	is_moving = true
@@ -80,6 +90,7 @@ func launch():
 func reset_ball():
 	position = Constants.BALL_POS
 	direction = Constants.BALL_INIT_VECTOR
+	velocity = speed * direction
 	is_moving = true
 
 func _on_power_up_activated():

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 func _ready():
+	print("Paddle is ready")
 	reset_paddle()
 	add_to_group("paddle")
 	#GameManager.powerup_activated.connect(_on_powerup_activated)

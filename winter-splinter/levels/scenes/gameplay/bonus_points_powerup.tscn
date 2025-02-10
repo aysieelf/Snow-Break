@@ -14,5 +14,3 @@ texture = ExtResource("1_2u6p1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vsfhl")
-
-[node name="Timer" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bq457st6cdcwu"]
+[gd_scene load_steps=24 format=3 uid="uid://bq457st6cdcwu"]
 
 [ext_resource type="Texture2D" uid="uid://bl6pyaeguems5" path="res://assets/sprites/backgrounds/playing-background.png" id="1_j4vxj"]
 [ext_resource type="Texture2D" uid="uid://cmyu03818eyj0" path="res://assets/sprites/backgrounds/healthbar-icon.png" id="2_7n56m"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxmrbdrv2svn2" path="res://levels/scenes/gameplay/paddle_char.tscn" id="8_pdjix"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/score_level.gd" id="10_a553e"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/current_power_up.gd" id="10_e7ujt"]
+[ext_resource type="Script" path="res://levels/scenes/gameplay/heart_bar.gd" id="10_l3t4j"]
 [ext_resource type="Script" path="res://levels/scenes/gameplay/bricks_container.gd" id="14_2jmph"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xuo5k"]
@@ -44,6 +45,7 @@ color_ramp = SubResource("GradientTexture1D_5hrfe")
 
 [sub_resource type="SystemFont" id="SystemFont_5jonv"]
 font_names = PackedStringArray("Courier New")
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_7i6s2"]
 font = SubResource("SystemFont_5jonv")
@@ -52,6 +54,7 @@ font_color = Color(0.831373, 0.94902, 1, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_bj16l"]
 font_names = PackedStringArray("Courier New")
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ye7yc"]
 font = SubResource("SystemFont_bj16l")
@@ -161,9 +164,10 @@ offset_top = 14.0
 offset_right = 105.0
 offset_bottom = 40.0
 min_value = 1.0
-max_value = 3.0
-value = 3.0
+max_value = 30.0
+value = 30.0
 texture_progress = ExtResource("2_7n56m")
+script = ExtResource("10_l3t4j")
 
 [node name="GridContainer" type="GridContainer" parent="HUD/ControlHUD"]
 layout_mode = 0

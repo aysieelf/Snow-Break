@@ -43,7 +43,6 @@ func _change_paddle_face(face: String = "DefaultFace") -> void:
 		$StrengthUpGlow.visible = true
 	elif face == "PowerupFace":
 		$PowerupFace.visible = true
-		$StrengthUpGlow.visible = true
 	elif face == "GameOverFace":
 		$PowerupFace.visible = true
 
@@ -51,7 +50,6 @@ func _hide_all_faces() -> void:
 	$DefaultFace.visible = false
 	$LevelupFace.visible = false
 	$PowerupFace.visible = false
-	$StrengthUpGlow.visible = false
 	
 func reset_paddle():
 	position = Constants.PADDLE_POS

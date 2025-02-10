@@ -65,9 +65,10 @@ const BRICK_TOP_OFFSET = 50
 const STRONG_BRICK_MAX_HEALTH = 3
 
 # Scores
-const INITIAL_LEVEL = 15
+const INITIAL_LEVEL = 8
 const INITIAL_HEALTHBAR = 3
 const INITIAL_SCORE = 0
 
 # Powerups
 const FALL_SPEED = 100.0
+const POWERUP_TIMER = 20

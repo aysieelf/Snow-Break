@@ -10,6 +10,10 @@ var current_level: int = Constants.INITIAL_LEVEL
 var current_healthbar: int = Constants.INITIAL_HEALTHBAR
 var top_scores: Array[int] = []
 
+func decrease_healthbar() -> int:
+	current_healthbar -= 1
+	return current_healthbar
+
 func add_points(points: int) -> void:
 	current_score += points
 	emit_signal("score_changed", current_score)

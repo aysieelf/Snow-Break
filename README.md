@@ -3,16 +3,16 @@
 Snow Break is my interpretation of the classic Breakout game. This is my first game in Godot and fourth game ever.
 
 ## Current Progress
-[██░░░░░░░░] 29% (16/56)
+[███░░░░░░░░] 30% (17/56)
 
 - [x] Project setup (deadline: 15.01.2025) - _completed on 14.01.2025_
 - [x] Asset creation (deadline: 20.01.2025) - _completed on 19.01.2025_
-- [ ] Core gameplay (deadline: 27.01.2025) - 
-- [ ] Game logic (deadline: 3.02.2025)
-- [ ] User interface development (deadline: 8.02.2025)
-- [ ] Testing and debugging (deadline: 12.02.2025)
-- [ ] Documentation (deadline: 14.02.2025)
-- [ ] Release (deadline: 16.02.2025)
+- [ ] Core gameplay (deadline: 14.02.2025)
+- [ ] Game logic (deadline: 21.02.2025)
+- [ ] User interface development (deadline: 28.02.2025)
+- [ ] Testing and debugging (deadline: 07.03.2025)
+- [ ] Documentation (deadline: 14.03.2025)
+- [ ] Release (deadline: 21.03.2025)
 
 ## 📑 Table of Contents
 - [Quick Start (Just Play)](#-quick-start-just-play)
@@ -99,6 +99,7 @@ If you want to explore or modify the code:
 - First time using GPUParticles2D
 - First time composing and recording my own background music (as well as some sound effects)
 - First time using GridContainer and JSON objects to create different compositions of ice blocks for the different levels
+- First time using a Timer to delay the start of the game
 
 ## 📸 Screenshots
 _(Coming soon)_

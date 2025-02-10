@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://lykaku0k4ymq"]
+[gd_scene load_steps=12 format=3 uid="uid://lykaku0k4ymq"]
 
-[ext_resource type="Script" path="res://levels/scenes/gameplay/normal_brick.gd" id="1_iijlr"]
+[ext_resource type="Script" path="res://levels/scenes/gameplay/powerup_brick.gd" id="1_vqrde"]
 [ext_resource type="Texture2D" uid="uid://bu0ntfxejovan" path="res://assets/sprites/bricks/power-up-brick.png" id="2_f3338"]
+[ext_resource type="PackedScene" uid="uid://dsjvjqapa6woa" path="res://levels/scenes/gameplay/strengthener_powerup.tscn" id="2_vi5cw"]
+[ext_resource type="PackedScene" uid="uid://blhrsaw2a6plx" path="res://levels/scenes/gameplay/bonus_points_powerup.tscn" id="3_w651d"]
 
 [sub_resource type="Curve" id="Curve_eb7ot"]
 _data = [Vector2(0.0483516, 0.995162), 0.0, 0.0, 0, 0, Vector2(1, 0.165426), 0.0, 0.0, 0, 0]
@@ -44,7 +46,8 @@ anchors_preset = 0
 
 [node name="PowerupBrick" type="StaticBody2D" parent="."]
 position = Vector2(32, 16)
-script = ExtResource("1_iijlr")
+script = ExtResource("1_vqrde")
+powerup_scenes = Array[PackedScene]([ExtResource("2_vi5cw"), ExtResource("3_w651d")])
 
 [node name="NormalBrick" type="Sprite2D" parent="PowerupBrick"]
 texture = ExtResource("2_f3338")

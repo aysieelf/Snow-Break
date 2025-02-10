@@ -16,6 +16,7 @@ func _on_body_entered(body):
 		$PowerupBreak.emitting = true
 		$PowerupBreak.process_mode = Node.PROCESS_MODE_ALWAYS
 		$PowerupBreak.reparent(get_parent()) 
+		SoundManager.play_sfx("power-up-collect")
 		collected = true
 		GameManager.increase_ball_strength()
 		ScoreManager.add_points(2)

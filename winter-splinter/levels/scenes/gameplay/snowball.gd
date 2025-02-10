@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = Constants.BALL_INIT_SPEED
+var speed = int(Constants.BALL_INIT_SPEED + ScoreManager.current_level*10)
 var direction = Constants.BALL_INIT_VECTOR
 var is_moving = false
 var ball_strength: int = 1

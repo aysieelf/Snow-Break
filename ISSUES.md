@@ -108,7 +108,7 @@ Core Gameplay (800x600 window):
 - [x] Implement level system:
   - [x] Level data structure
   - [x] Block layout system
-  - [ ] Difficulty progression - speed progression
+  - [x] Difficulty progression - speed progression
 - [ ] Create sound system:
   - [ ] Sound effect manager
   - [ ] Background music handler

@@ -33,29 +33,40 @@ func _physics_process(delta):
 			velocity = new_direction * speed
 
 func _handle_platform_bounce(platform, collision_point):
-	# Get the CollisionShape2D node
 	var collision_shape = platform.get_node("CollisionShape2D") 
-	
-	# Get platform width (assuming it has a RectangleShape2D)
-	var platform_width = collision_shape.shape.extents.x * 2  # `extents.x` is half-width
+	var platform_width = collision_shape.shape.extents.x * 2 * platform.scale.x  
 
-	# Calculate relative hit position (-1 = left, 1 = right)
-	var relative_hit_position = (collision_point.x - platform.position.x) / (platform_width / 2)
+	# Left edge is already platform.position.x
+	var platform_left = platform.position.x
+	var platform_right = platform_left + platform_width  
 
-	# Debugging: Print where the ball hits
-	print("Collision point:", collision_point, " Platform position:", platform.position)
-	print("Relative Hit Position:", relative_hit_position)
+	# Compute correct relative hit position
+	var relative_hit_position = ((collision_point.x - platform_left) / platform_width) * 2 - 1
 
-	# Convert relative hit position to an angle range
-	var bounce_angle = lerp(-Constants.MAX_BOUNCE_ANGLE, Constants.MAX_BOUNCE_ANGLE, (relative_hit_position + 1) / 2)
+	# Clamp to avoid values outside -1 to 1
+	relative_hit_position = clamp(relative_hit_position * 1.3, -1.0, 1.0)
 
-	# Debugging: Print the bounce angle
-	print("Bounce Angle (radians):", bounce_angle, " Bounce Angle (degrees):", rad_to_deg(bounce_angle))
+	# Ensure smooth angle transitions
+	var max_bounce_angle = deg_to_rad(50)
+	var bounce_angle = relative_hit_position * max_bounce_angle
 
-	# Create new direction based on bounce angle
-	direction = Vector2(cos(bounce_angle), -sin(bounce_angle)).normalized()
-	velocity = direction * speed
+	# Prevent too shallow angles, but allow proper flipping
+	var min_angle = deg_to_rad(10)  # Minimum 10° bounce
+	if abs(bounce_angle) < min_angle:
+		bounce_angle = sign(bounce_angle) * min_angle  # Ensure at least 10 degrees
 
+	# Flip X direction if it was moving left
+	var new_direction = Vector2(sin(bounce_angle) * 0.8, -cos(bounce_angle)).normalized()
+	if relative_hit_position < 0:
+		new_direction.x = -abs(new_direction.x)  # Force it to move left when needed
+
+	# Prevent platform sliding
+	if new_direction.y > -0.1:  
+		new_direction.y = -0.2  
+		new_direction = new_direction.normalized()
+
+	# Keep ball speed constant
+	velocity = new_direction * speed
 
 
 func launch():

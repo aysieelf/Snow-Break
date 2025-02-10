@@ -41,7 +41,7 @@ const PADDLE_MIN_X = 0
 const PADDLE_MAX_X = 672
 
 # Snowball settings
-const BALL_INIT_SPEED = 250
+const BALL_INIT_SPEED = 240
 const BALL_MAX_SPEED = 10
 const BALL_ACCELERATION = 0.1
 const BALL_HEIGHT = 20

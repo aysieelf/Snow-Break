@@ -75,35 +75,35 @@ Asset Creation:
   - [x] Background music (winter theme)
 
 Core Gameplay (800x600 window):
-- [ ] Setup base scene structure
-- [ ] Create Ice Platform node:
-  - [ ] Basic movement system
-  - [ ] Size modification system
-  - [ ] Collision shape
-  - [ ] Platform trail effect
-- [ ] Create Snowball node:
-  - [ ] Basic physics setup
-  - [ ] Collision detection
-  - [ ] Ball launch mechanism
-  - [ ] Multi-ball support
-- [ ] Create Ice Block node:
-  - [ ] Base block functionality
-  - [ ] Different block types
-  - [ ] Health system for stronger blocks
-  - [ ] Break animation
+- [x] Setup base scene structure
+- [x] Create Ice Platform node:
+  - [x] Basic movement system
+  - [x] Size modification system
+  - [x] Collision shape
+  - [x] Platform trail effect
+- [x] Create Snowball node:
+  - [x] Basic physics setup
+  - [x] Collision detection
+  - [x] Ball launch mechanism
+  - [x] Multi-ball support
+- [x] Create Ice Block node:
+  - [x] Base block functionality
+  - [x] Different block types
+  - [x] Health system for stronger blocks
+  - [x] Break animation
 - [ ] Create Power-up node:
-  - [ ] Power-up base class
-  - [ ] Different power-up types
+  - [x] Power-up base class
+  - [x] Different power-up types
   - [ ] Collection detection
   - [ ] Effect application
-- [ ] Implement game physics:
-  - [ ] Ball bouncing mechanics
-  - [ ] Platform-ball interaction
-  - [ ] Block-ball interaction
-  - [ ] Wall collision
-- [ ] Create particle systems:
-  - [ ] Snow effect manager
-  - [ ] Break effect manager
+- [x] Implement game physics:
+  - [x] Ball bouncing mechanics
+  - [x] Platform-ball interaction
+  - [x] Block-ball interaction
+  - [x] Wall collision
+- [x] Create particle systems:
+  - [x] Snow effect manager
+  - [x] Break effect manager
   - [ ] Collection effect manager
 - [ ] Implement level system:
   - [ ] Level data structure

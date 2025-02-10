@@ -13,6 +13,9 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("paddle"):
+		$PowerupBreak.emitting = true
+		$PowerupBreak.process_mode = Node.PROCESS_MODE_ALWAYS
+		$PowerupBreak.reparent(get_parent()) 
 		collected = true
 		GameManager.increase_ball_strength()
 		ScoreManager.add_points(2)

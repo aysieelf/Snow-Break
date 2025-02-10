@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsjvjqapa6woa"]
+[gd_scene load_steps=9 format=3 uid="uid://dsjvjqapa6woa"]
 
 [ext_resource type="Script" path="res://levels/scenes/gameplay/strengthener_powerup.gd" id="1_l1r8s"]
 [ext_resource type="Texture2D" uid="uid://c27tfi5271pmx" path="res://assets/sprites/powerups/ball_strengthener.png" id="1_v4jyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sgx8"]
 size = Vector2(32, 32)
+
+[sub_resource type="Gradient" id="Gradient_hs2lv"]
+offsets = PackedFloat32Array(0.470085, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0520q"]
+gradient = SubResource("Gradient_hs2lv")
+
+[sub_resource type="Curve" id="Curve_fto0h"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.797945, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d5ts5"]
+curve = SubResource("Curve_fto0h")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xe67o"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_d5ts5")
+color = Color(0.498039, 0.462745, 0.568627, 1)
+color_ramp = SubResource("GradientTexture1D_0520q")
 
 [node name="StrengthenerPowerup" type="Area2D"]
 script = ExtResource("1_l1r8s")
@@ -13,4 +40,13 @@ script = ExtResource("1_l1r8s")
 texture = ExtResource("1_v4jyg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_3sgx8")
+
+[node name="PowerupBreak" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_xe67o")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
